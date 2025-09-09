@@ -19,8 +19,12 @@ if ($count == 1) {
             echo "<script>alert('Account is already activated.');</script>";
         } else {
             $updt = "update employees set `status`='active' where email='$email' and token='$token'";
+<<<<<<< HEAD
             $updt1 = "update emp_login set `status`='inactive' where user_name=(select user_name from employees where email='$email' and token='$token')";
             if (mysqli_query($con, $updt) && mysqli_query($con, $updt1)) {
+=======
+            if (mysqli_query($con, $updt)) {
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                 echo "<script>alert('Account Activation successfull. Please login to continue');</script>";
             } else {
                 echo "<script>alert('Error in activating account. Please try again later');</script>";

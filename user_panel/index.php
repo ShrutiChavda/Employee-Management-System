@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php require_once('session.php'); ?>
+=======
+<?php include('session.php'); ?>
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,13 +25,22 @@
 </head>
 
 <body id="page-top">
+<<<<<<< HEAD
     <?php require_once('sidebar.php'); ?>
     <?php require_once('topbar.php'); ?>
+=======
+    <?php include('sidebar.php'); ?>
+    <?php include('topbar.php'); ?>
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
     <div class="container-fluid">
 
         <div class="row">
+<<<<<<< HEAD
 
+=======
+            <!-- Base Salary Card -->
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
             <div class="col-xl-3 col-md-6 mb-4">
                 <a href="salary.php" style="text-decoration: none; color: inherit;">
                     <div class="card border-left-success shadow h-100 py-2">
@@ -60,7 +73,11 @@
                 </a>
             </div>
 
+<<<<<<< HEAD
 
+=======
+            <!-- Bonus Card -->
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
             <div class="col-xl-3 col-md-6 mb-4">
                 <a href="salary.php" style="text-decoration: none; color: inherit;">
                     <div class="card border-left-primary shadow h-100 py-2">
@@ -92,7 +109,11 @@
                 </a>
             </div>
 
+<<<<<<< HEAD
 
+=======
+            <!-- Due Projects Card -->
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
             <div class="col-xl-3 col-md-6 mb-4">
                 <a href="project_status.php" style="text-decoration: none; color: inherit;">
                     <div class="card border-left-info shadow h-100 py-2">
@@ -135,7 +156,11 @@
                 </a>
             </div>
 
+<<<<<<< HEAD
 
+=======
+            <!-- Leave History Card -->
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
             <div class="col-xl-3 col-md-6 mb-4">
                 <a href="leaves.php" style="text-decoration: none; color: inherit;">
                     <div class="card border-left-warning shadow h-100 py-2">
@@ -168,7 +193,11 @@
             </div>
         </div>
 
+<<<<<<< HEAD
 
+=======
+        <!-- Events Card -->
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
         <div class="row">
             <div class="col-xl-3 col-md-6 mb-4">
                 <a href="event.php" style="text-decoration: none; color: inherit;">
@@ -201,7 +230,11 @@
                 </a>
             </div>
 
+<<<<<<< HEAD
 
+=======
+            <!-- Tours Card -->
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
             <div class="col-xl-3 col-md-6 mb-4">
                 <a href="tours.php" style="text-decoration: none; color: inherit;">
                     <div class="card border-left-primary shadow h-100 py-2">
@@ -234,7 +267,11 @@
             </div>
         </div>
 
+<<<<<<< HEAD
 
+=======
+        <!-- Employees Leaderboard -->
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-success">Employees Leaderboard</h6>
@@ -260,6 +297,7 @@
                                 $index = 1;
                                 while ($row = mysqli_fetch_assoc($result)) {
                                     ?>
+<<<<<<< HEAD
                             <tr>
                                 <td><?php echo $index++; ?></td>
                                 <td><?php echo $row['leader_name']; ?></td>
@@ -268,6 +306,16 @@
                                 <td><?php echo $row['points']; ?></td>
                             </tr>
                             <?php 
+=======
+                                    <tr>
+                                        <td><?php echo $index++; ?></td>
+                                        <td><?php echo $row['leader_name']; ?></td>
+                                        <td><?php echo $row['leader_email']; ?></td>
+                                        <td><?php echo $row['p_name']; ?></td>
+                                        <td><?php echo $row['points']; ?></td>
+                                    </tr>
+                                <?php 
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                                 } // End of while loop
                             } else {
                                 echo "<tr><td colspan='5'>No data available</td></tr>";
@@ -280,14 +328,24 @@
         </div>
     </div>
 
+<<<<<<< HEAD
     <?php require_once('footer.php'); ?>
 
 
+=======
+    <?php include_once('footer.php'); ?>
+
+    <!-- Scroll to Top Button-->
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
+<<<<<<< HEAD
 
+=======
+    <!-- Logout Modal-->
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -308,6 +366,7 @@
         </div>
     </div>
 
+<<<<<<< HEAD
 
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -335,3 +394,25 @@
 </body>
 
 </html>
+=======
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
+
+</body>
+
+</html>
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310

@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 require_once('connection.php');
+=======
+include('connection.php');
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
 if(isset($_GET['project_id'])) {
     $project_id = $_GET['project_id'];
@@ -38,6 +42,7 @@ if(isset($_GET['project_id'])) {
     echo "<script>alert('Invalid request')</script>";
 }
 ?>
+<<<<<<< HEAD
 
 <script>
 window.history.pushState(null, "", window.location.href);
@@ -45,3 +50,5 @@ window.onpopstate = function() {
     window.history.pushState(null, "", window.location.href);
 };
 </script>
+=======
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php  require_once('session.php'); 
+=======
+<?php  include('session.php'); 
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 if(isset($_GET['id'])) {
     $a = $_GET['id'];
     if(empty($a)) {
@@ -33,21 +37,34 @@ if(isset($_GET['id'])) {
 
     <title>Event Details</title>
 
+<<<<<<< HEAD
 
     <link href="img/favicon.png" rel="icon">
 
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
+=======
+    
+    <link href="img/favicon.png" rel="icon">
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Custom styles for this template-->
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
+<<<<<<< HEAD
 
+=======
+    <!-- <script src="js/event_details.js"></script> -->
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
 
 </head>
 
 <style>
+<<<<<<< HEAD
 table {
     width: 100%;
     border-collapse: collapse;
@@ -63,10 +80,28 @@ td {
 th {
     background-color: #f2f2f2;
 }
+=======
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 </style>
 
 <body id="page-top">
 
+<<<<<<< HEAD
     <?php  require_once('sidebar.php'); ?>
 
     <?php  require_once('topbar.php'); ?>
@@ -156,10 +191,102 @@ th {
 
     <?php
           require_once('footer.php');
+=======
+<?php  include('sidebar.php'); ?>
+
+<?php  include('topbar.php'); ?>
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-success">Event Detials</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Field</th>
+                                            <th>Details</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+
+                                    <tr>
+                                            <td>Event Name</td>
+                                            <td><?php echo $rec['name']; ?></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Description</td>
+                                            <td><?php echo $rec['description']; ?></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Employee Name</td>
+                                            <td><?php echo $rec['employee_name']; ?></td>
+                                        </tr>
+                                      
+                                        <tr>
+                                            <td>Mobile Number</td>
+                                            <td><?php echo $rec['mobile_number']; ?></td>
+                                        </tr>
+                                        <!-- <tr>
+                                            <td>Email</td>
+                                            <td><?php //echo $_SESSION['email']; ?></td>
+                                        </tr> -->
+                                        <tr>
+                                            <td>Event Date</td>
+                                            <td><?php echo $rec['event_date']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Event Starting Time</td>
+                                            <td><?php echo $rec['event_starting_time']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Event Ending Time</td>
+                                            <td><?php echo $rec['event_ending_time']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Venue Address</td>
+                                            <td><?php echo $rec['venue_address']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Title of participation</td>
+                                            <td><?php echo $rec['title_of_participation']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Additional Information</td>
+                                            <td><?php echo $rec['additional_information']; ?></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>Admin Remark</td>
+                                            <td><?php echo $rec['admin_remark']; ?></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <?php
+          include_once('footer.php');
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
           ?>
 
     </div>
 
+<<<<<<< HEAD
     </div>
 
 
@@ -167,11 +294,24 @@ th {
 
 
 
+=======
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
+<<<<<<< HEAD
 
+=======
+    <!-- Logout Modal-->
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -192,6 +332,7 @@ th {
         </div>
     </div>
 
+<<<<<<< HEAD
 
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -207,6 +348,17 @@ th {
         window.history.pushState(null, "", window.location.href);
     };
     </script>
+=======
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
 </body>
 

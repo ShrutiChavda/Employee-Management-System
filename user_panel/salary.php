@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php require_once('session.php');
+=======
+<?php include('session.php');
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
  ?>
 
 <!DOCTYPE html>
@@ -25,6 +29,7 @@
 
 <body id="page-top">
 
+<<<<<<< HEAD
     <?php require_once('sidebar.php'); ?>
 
 
@@ -32,6 +37,15 @@
 
     <div class="container-fluid"><br>
 
+=======
+    <?php include('sidebar.php'); ?>
+
+
+    <?php include('topbar.php'); ?>
+    <!-- Begin Page Content -->
+    <div class="container-fluid"><br>
+        <!-- DataTales Example -->
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-success">Salary</h6>
@@ -87,6 +101,7 @@
         </div>
 
     </div>
+<<<<<<< HEAD
 
 
 
@@ -104,11 +119,34 @@
 
 
 
+=======
+    <!-- /.container-fluid -->
+    <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+
+    <?php
+    include_once('footer.php');
+    ?>
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
+<<<<<<< HEAD
 
+=======
+    <!-- Logout Modal-->
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -130,6 +168,7 @@
     </div>
 
 
+<<<<<<< HEAD
 
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -153,6 +192,25 @@
       window.history.pushState(null, "", window.location.href);
   };
 </script>
+=======
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
+
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
 </body>
 

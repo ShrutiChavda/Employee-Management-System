@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 require_once('connection.php');
+=======
+include('connection.php');
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 $url = $_SERVER['REQUEST_URI'];
 // echo $url;
 $url = parse_url($url, PHP_URL_PATH);
@@ -30,29 +34,45 @@ $arr_url = explode("/", $url);
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
+<<<<<<< HEAD
         <!-- 
+=======
+<!-- 
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
         <li class="nav-item <?php //if (isset($arr_url[3]) && $arr_url[3] == "projects.php" || $arr_url[3] == "Details.php") { echo "active"; } ?>">
             <a class="nav-link" href="projects.php">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>History</span></a>
         </li> -->
 
+<<<<<<< HEAD
         <li
             class="nav-item <?php if (isset($arr_url[3]) && $arr_url[3] == "project_status.php" || $arr_url[3] == "submit.php") { echo "active"; } ?>">
+=======
+        <li class="nav-item <?php if (isset($arr_url[3]) && $arr_url[3] == "project_status.php" || $arr_url[3] == "submit.php") { echo "active"; } ?>">
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
             <a class="nav-link" href="project_status.php">
                 <i class="fas fa-fw fa-hourglass"></i>
                 <span>Projects</span></a>
         </li>
 
+<<<<<<< HEAD
         <li
             class="nav-item <?php if (isset($arr_url[3]) && $arr_url[3] == "event.php" || $arr_url[3] == "apply_for_event.php" ||  $arr_url[3] == "event_details.php") { echo "active"; } ?>">
+=======
+        <li class="nav-item <?php if (isset($arr_url[3]) && $arr_url[3] == "event.php" || $arr_url[3] == "apply_for_event.php" ||  $arr_url[3] == "event_details.php") { echo "active"; } ?>">
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
             <a class="nav-link" href="event.php">
                 <i class="fas fa-fw fa-layer-group"></i>
                 <span>Event</span></a>
         </li>
 
+<<<<<<< HEAD
         <li
             class="nav-item <?php if (isset($arr_url[3]) && $arr_url[3] == "leaves.php" || $arr_url[3] == "request_leave.php") { echo "active"; } ?>">
+=======
+        <li class="nav-item <?php if (isset($arr_url[3]) && $arr_url[3] == "leaves.php" || $arr_url[3] == "request_leave.php") { echo "active"; } ?>">
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
             <a class="nav-link" href="leaves.php">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Leaves</span></a>
@@ -64,8 +84,12 @@ $arr_url = explode("/", $url);
                 <span>Salary</span></a>
         </li>
 
+<<<<<<< HEAD
         <li
             class="nav-item <?php if (isset($arr_url[3]) && $arr_url[3] == "tours.php" || $arr_url[3] == "request_tours.php") { echo "active"; } ?>">
+=======
+        <li class="nav-item <?php if (isset($arr_url[3]) && $arr_url[3] == "tours.php" || $arr_url[3] == "request_tours.php") { echo "active"; } ?>">
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
             <a class="nav-link" href="tours.php">
                 <i class="fas fa-fw fa-plane"></i>
                 <span>Tours</span></a>
@@ -79,6 +103,7 @@ $arr_url = explode("/", $url);
             <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
     </ul>
+<<<<<<< HEAD
     <!-- End of Sidebar -->
 
     <script>
@@ -87,3 +112,6 @@ $arr_url = explode("/", $url);
         window.history.pushState(null, "", window.location.href);
     };
     </script>
+=======
+    <!-- End of Sidebar -->
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310

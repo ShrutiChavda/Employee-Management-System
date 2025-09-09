@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php  require_once('session.php'); 
+=======
+<?php  include('session.php'); 
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 if(isset($_GET['submit']))
 {
     $a=$_GET['submit'];
@@ -21,7 +25,11 @@ if(isset($_GET['submit']))
     <link href="img/favicon.png" rel="icon">  
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="css/sb-admin-2.css" rel="stylesheet">
+<<<<<<< HEAD
 
+=======
+    <!-- <script src="js/jquery-3.6.4.min.js"></script> -->
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
@@ -34,10 +42,17 @@ if(isset($_GET['submit']))
 </head>
 
 <body id="page-top">
+<<<<<<< HEAD
     <?php require_once('sidebar.php'); ?>
 
 
     <?php require_once('topbar.php'); ?>
+=======
+    <?php include('sidebar.php'); ?>
+
+
+    <?php include('topbar.php'); ?>
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
 
     <div class="container-fluid">
@@ -96,7 +111,11 @@ if(isset($_GET['submit']))
                                     </div>
 
                                     <?php
+<<<<<<< HEAD
 require_once('connection.php');
+=======
+include('connection.php');
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
 if(isset($_POST['btn'])) {
     $upload_dir = "Uploads/";
@@ -190,6 +209,7 @@ if(isset($_POST['btn'])) {
     </div>
 
     </div>
+<<<<<<< HEAD
 
 
     <?php
@@ -203,11 +223,30 @@ if(isset($_POST['btn'])) {
 
 
 
+=======
+    <!-- End of Main Content -->
+
+    <?php
+          include_once('footer.php');
+          ?>
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
+<<<<<<< HEAD
 
+=======
+    <!-- Logout Modal-->
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -229,7 +268,11 @@ if(isset($_POST['btn'])) {
     </div>
 
 
+<<<<<<< HEAD
 
+=======
+    <!-- Bootstrap core JavaScript-->
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <script src="js/submit.js"></script>
 
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -238,12 +281,15 @@ if(isset($_POST['btn'])) {
     <script src="vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <script src="js/demo/datatables-demo.js"></script>
+<<<<<<< HEAD
 <script>
   window.history.pushState(null, "", window.location.href);
   window.onpopstate = function () {
       window.history.pushState(null, "", window.location.href);
   };
 </script>
+=======
+>>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
 
 </body>
