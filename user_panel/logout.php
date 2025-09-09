@@ -1,0 +1,24 @@
+<?php
+
+session_start();
+
+
+// Include your database connection
+include('connection.php');
+
+// Check if user is logged in
+if (isset($_SESSION['username'])) {
+    // Update user status to "inactive" in the database
+    $username = $_SESSION['username'];
+    $sql_update_status = "UPDATE emp_login SET status = 'inactive' WHERE user_name = '$username'";
+    mysqli_query($con, $sql_update_status);
+    unset($_SESSION['username']);
+}
+
+// Destroy the session
+session_unset();
+session_destroy();
+// Redirect the user to the login page
+echo "<script>window.location.replace('../login.php');</script>";
+exit();
+?>
