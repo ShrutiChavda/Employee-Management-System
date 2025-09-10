@@ -2,10 +2,7 @@
 
 session_start();
 
-<<<<<<< HEAD
 
-=======
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 // Include your database connection
 include('connection.php');
 
@@ -19,16 +16,15 @@ if (isset($_SESSION['username'])) {
 }
 
 // Destroy the session
-<<<<<<< HEAD
+
 session_unset();
 session_destroy();
 // Redirect the user to the login page
 echo "<script>window.location.replace('../login.php');</script>";
-=======
+
 // session_destroy();
 
 // Redirect the user to the login page
 header("Location: http://localhost/Employee%20Management%20System/login.php");
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 exit();
 ?>

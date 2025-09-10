@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+
 <?php  require_once('session.php'); 
-=======
-<?php  include('session.php'); 
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 if(isset($_GET['id'])) {
     $a = $_GET['id'];
     if(empty($a)) {
@@ -37,34 +34,32 @@ if(isset($_GET['id'])) {
 
     <title>Event Details</title>
 
-<<<<<<< HEAD
+
 
     <link href="img/favicon.png" rel="icon">
 
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-=======
+
     
     <link href="img/favicon.png" rel="icon">
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template-->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
-<<<<<<< HEAD
 
-=======
+
+
     <!-- <script src="js/event_details.js"></script> -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
 
 </head>
 
 <style>
-<<<<<<< HEAD
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -80,7 +75,7 @@ td {
 th {
     background-color: #f2f2f2;
 }
-=======
+
     table {
         width: 100%;
         border-collapse: collapse;
@@ -96,12 +91,11 @@ th {
     th {
         background-color: #f2f2f2;
     }
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 </style>
 
 <body id="page-top">
 
-<<<<<<< HEAD
+
     <?php  require_once('sidebar.php'); ?>
 
     <?php  require_once('topbar.php'); ?>
@@ -191,10 +185,9 @@ th {
 
     <?php
           require_once('footer.php');
-=======
-<?php  include('sidebar.php'); ?>
 
-<?php  include('topbar.php'); ?>
+        include('sidebar.php'); 
+        include('topbar.php'); ?>
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -281,20 +274,19 @@ th {
 
             <?php
           include_once('footer.php');
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
           ?>
 
     </div>
 
-<<<<<<< HEAD
-    </div>
-
 
     </div>
 
 
+    </div>
 
-=======
+
+
+
         </div>
         <!-- End of Content Wrapper -->
 
@@ -302,16 +294,14 @@ th {
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
-<<<<<<< HEAD
 
-=======
+
+
     <!-- Logout Modal-->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -332,7 +322,7 @@ th {
         </div>
     </div>
 
-<<<<<<< HEAD
+
 
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -348,7 +338,7 @@ th {
         window.history.pushState(null, "", window.location.href);
     };
     </script>
-=======
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -358,7 +348,6 @@ th {
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
 </body>
 

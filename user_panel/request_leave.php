@@ -1,12 +1,7 @@
-<<<<<<< HEAD
+
 <?php  require_once('session.php');  ?>
 <?php
-require_once('connection.php');
-=======
-<?php  include('session.php');  ?>
-<?php
 include('connection.php');
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 $id=$_SESSION['user_id'];
 
 if (isset($_POST['submit'])) {
@@ -75,19 +70,18 @@ if (isset($_POST['submit'])) {
 
 <body id="page-top">
 
-<<<<<<< HEAD
+
     <?php require_once('sidebar.php'); ?>
 
 
     <?php require_once('topbar.php'); ?>
 
-=======
+
     <?php include('sidebar.php'); ?>
 
 
     <?php include('topbar.php'); ?>
     <!-- Begin Page Content -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <?php
                             $q="select * from employees where id=$id";
                             $res=mysqli_query($con,$q);
@@ -104,21 +98,19 @@ if (isset($_POST['submit'])) {
                         <div class="card-heading"></div>
                         <div class="card-body">
                             <h2 class="title">Apply For leaves</h2>
-<<<<<<< HEAD
 
-=======
+
+
                         
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                             <div>
                                 <label>Employee Name<label>
                             </div>
                             <div>
-<<<<<<< HEAD
+
                                 <input class="input--style-1" type="text" placeholder="Name" name="nm"
                                     value="<?php echo $row['full_name']; ?>" readonly />
-=======
+
                                 <input class="input--style-1" type="text" placeholder="Name" name="nm" value="<?php echo $row['full_name']; ?>" readonly/>
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                                 <span id="nm_err" class="error1 p-1"></span>
                             </div>
 
@@ -135,12 +127,11 @@ if (isset($_POST['submit'])) {
                             <div>
                                 <p>Start date</p>
                                 <div>
-<<<<<<< HEAD
+
                                     <input class="input--style-1" type="date" placeholder="start date" id="sd"
                                         name="sd" />
-=======
+
                                     <input class="input--style-1" type="date" placeholder="start date" id="sd" name="sd" />
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                                     <span id="sd_err" class="error1 p-1"></span>
                                 </div>
                             </div>
@@ -148,12 +139,11 @@ if (isset($_POST['submit'])) {
                             <div>
                                 <p>End date</p>
                                 <div>
-<<<<<<< HEAD
+
                                     <input class="input--style-1" type="date" placeholder="End date" id="ed"
                                         name="ed" />
-=======
+
                                     <input class="input--style-1" type="date" placeholder="End date" id="ed" name="ed" />
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                                     <span id="ed_err" class="error1 p-1"></span>
                                 </div>
                             </div>
@@ -172,17 +162,16 @@ if (isset($_POST['submit'])) {
     </div>
 
     </div>
-<<<<<<< HEAD
 
-=======
+
+
     <!-- /.container-fluid -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
     <?php  }  ?>
 
 
     <?php
-<<<<<<< HEAD
+
           require_once('footer.php');
           ?>
 
@@ -193,7 +182,7 @@ if (isset($_POST['submit'])) {
 
 
 
-=======
+
           include_once('footer.php');
           ?>
 
@@ -204,16 +193,14 @@ if (isset($_POST['submit'])) {
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
-<<<<<<< HEAD
 
-=======
+
+
     <!-- Logout Modal-->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -244,15 +231,14 @@ if (isset($_POST['submit'])) {
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <script src="js/demo/datatables-demo.js"></script>
-<<<<<<< HEAD
+
     <script>
     window.history.pushState(null, "", window.location.href);
     window.onpopstate = function() {
         window.history.pushState(null, "", window.location.href);
     };
     </script>
-=======
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
+
 
 </body>
 

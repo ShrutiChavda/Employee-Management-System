@@ -1,14 +1,9 @@
-<<<<<<< HEAD
+
 <?php  require_once('session.php');  ?>
 
 <?php
 require_once('connection.php');
-=======
-<?php  include('session.php');  ?>
 
-<?php
-include('connection.php');
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 if(isset($_GET['edit']))
 {
     $a=$_GET['edit'];
@@ -41,11 +36,10 @@ if(isset($_GET['edit']))
     <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
 
     <link rel="stylesheet" href="css/main.css">
-<<<<<<< HEAD
 
-=======
+
+
     
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
 
@@ -53,7 +47,7 @@ if(isset($_GET['edit']))
 
 <body id="page-top">
 
-<<<<<<< HEAD
+
     <?php require_once('sidebar.php'); ?>
 
 
@@ -73,7 +67,7 @@ if(isset($_GET['edit']))
                             <h2 class="title">Update Profile</h2>
 
 
-=======
+
     <?php include('sidebar.php'); ?>
 
 
@@ -93,7 +87,6 @@ if(isset($_GET['edit']))
                             <h2 class="title">Update Profile</h2>
 
                             <!-- NID -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                             <div>
                                 <p>NID</p>
                                 <div class="input-group1">
@@ -113,11 +106,10 @@ if(isset($_GET['edit']))
                             </div>
 
 
-<<<<<<< HEAD
 
-=======
+
+
                             <!-- First Name -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                             <div>
                                 <p>First Name</p>
                                 <div class="input-group1">
@@ -127,11 +119,10 @@ if(isset($_GET['edit']))
                                 </div>
                             </div>
 
-<<<<<<< HEAD
 
-=======
+
+
                             <!-- Last Name -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                             <div>
                                 <p>Last Name</p>
                                 <div class="input-group1">
@@ -141,11 +132,10 @@ if(isset($_GET['edit']))
                                 </div>
                             </div>
 
-<<<<<<< HEAD
 
-=======
+
+
                             <!-- Email -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                             <div>
                                 <p>Email</p>
                                 <div class="input-group1">
@@ -155,11 +145,10 @@ if(isset($_GET['edit']))
                                 </div>
                             </div>
 
-<<<<<<< HEAD
 
-=======
+
+
                             <!-- Date of Birth -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                             <div>
                                 <p>Date of Birth</p>
                                 <div class="input-group1">
@@ -169,11 +158,10 @@ if(isset($_GET['edit']))
                                 </div>
                             </div>
 
-<<<<<<< HEAD
 
-=======
+
+
                             <!-- Gender -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                             <div>
                                 <p>Gender</p>
                                 <div class="input-group1">
@@ -188,11 +176,10 @@ if(isset($_GET['edit']))
                                 </div>
                             </div>
 
-<<<<<<< HEAD
 
-=======
+
+
                             <!-- Contact Number -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                             <div>
                                 <p>Contact Number</p>
                                 <div class="input-group1">
@@ -203,11 +190,10 @@ if(isset($_GET['edit']))
                             </div>
 
 
-<<<<<<< HEAD
 
-=======
+
+
                             <!-- Address -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                             <div>
                                 <p>Address</p>
                                 <div class="input-group1">
@@ -235,11 +221,10 @@ if(isset($_GET['edit']))
                                 </div>
                             </div>
 
-<<<<<<< HEAD
 
-=======
+
+
                             <!-- Degree -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                             <div>
                                 <p> Degree</p>
                                 <?php $deg = $rec['13']; ?>
@@ -267,42 +252,25 @@ if(isset($_GET['edit']))
                             </div>
 
 
-<<<<<<< HEAD
 
-                            <p>Profile picture</p>
 
-                            <?php
-=======
-                          
                             <p>Profile picture</p>
 
 <?php
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 if(isset($_GET['edit']))
 {
 $id= $_GET['edit'];
 $q = "select * from employees where id='$id'";
 $res = mysqli_query($con, $q);
 while ($row = mysqli_fetch_array($res)) { ?>
-<<<<<<< HEAD
+
                             <img class="img-profile rounded-circle" height="100px" width="100px"
                                 src="Uploads/<?php echo $row['14']; ?>" /><?php  }}  ?>
 
                             <div class="input-group1">
                                 <input class="input--style-1" type="file" placeholder="Upload Image" name="f1"
                                     id="f1" />
-                            </div>
-                            <?php
-=======
-<img class="img-profile rounded-circle" height="100px" width="100px" src="Uploads/<?php echo $row['14']; ?>"/><?php  }}  ?>
-
-<div class="input-group1">
-    <input class="input--style-1" type="file" placeholder="Upload Image" name="f1"
-        id="f1" />
-</div>
-<?php
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
-
+                            </div><?php
 
 $dir = "Uploads";
 
@@ -356,17 +324,16 @@ if ($file_uploaded) {
     $degree = $_POST['degree'];
     $full_name = $fn . " " . $ln;
 
-<<<<<<< HEAD
+
 // require_once the code to update other fields in the database
 $ins = "UPDATE `employees` SET `first_name`='$fn',`last_name`='$ln', `birthday`='$dob',`gender`='$gender',`contact`='$contactNumber',`address`='$address',`department`='$department',`degree`='$degree'";
 if (!empty($unique_filename)) {
 // If a new file is uploaded, require_once it in the update query
-=======
+
 // Include the code to update other fields in the database
 $ins = "UPDATE `employees` SET `first_name`='$fn',`last_name`='$ln', `birthday`='$dob',`gender`='$gender',`contact`='$contactNumber',`address`='$address',`department`='$department',`degree`='$degree'";
 if (!empty($unique_filename)) {
 // If a new file is uploaded, include it in the update query
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 $ins .= ", `profile_pic`='$unique_filename'";
 }
 $ins .= " WHERE `id`='$id'";
@@ -379,14 +346,14 @@ echo "Error: ";
 }
 }
 }
-
+}
 ?>
 
 
                             <div class="p-t-20">
                                 <button class="btn btn--radius btn-success" name="submit" type="submit">Submit</button>
                             </div>
-<<<<<<< HEAD
+
                         </div>
                     </div>
                 </div>
@@ -394,7 +361,7 @@ echo "Error: ";
 
     </div>
 
-=======
+
                     </div>
                 </div>
             </div>
@@ -402,12 +369,11 @@ echo "Error: ";
 
     </div>
     <!-- /.container-fluid -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     </form>
 
 
     </div>
-<<<<<<< HEAD
+
 
 
     <?php
@@ -421,7 +387,7 @@ echo "Error: ";
 
 
 
-=======
+
     <!-- End of Main Content -->
 
     <?php
@@ -435,16 +401,14 @@ echo "Error: ";
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
-<<<<<<< HEAD
 
-=======
+
+
     <!-- Logout Modal-->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -477,15 +441,14 @@ echo "Error: ";
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <script src="js/demo/datatables-demo.js"></script>
-<<<<<<< HEAD
+
     <script>
     window.history.pushState(null, "", window.location.href);
     window.onpopstate = function() {
         window.history.pushState(null, "", window.location.href);
     };
     </script>
-=======
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
+
 
 </body>
 

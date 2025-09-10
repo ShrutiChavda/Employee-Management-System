@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+
 <?php  require_once('session.php');  ?>
-=======
-<?php  include('session.php');  ?>
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,17 +34,16 @@
 </head>
 
 <body id="page-top">
-<<<<<<< HEAD
+
     <?php require_once('sidebar.php'); ?>
     <?php require_once('topbar.php'); ?>
 
 
-=======
+
     <?php include('sidebar.php'); ?>
     <?php include('topbar.php'); ?>
 
     <!-- Begin Page Content -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <div class="container-fluid">
 
         <form id="registrationForm" style="text-align:center">
@@ -57,26 +53,24 @@
                     <div class="card card-1">
                         <div class="card-heading"></div>
                         <div class="card-body">
-<<<<<<< HEAD
 
-=======
+
+
                             <!-- Other HTML code here -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                             <h2 class="title">Profile Information</h2>
 
 
                             <?php  
-<<<<<<< HEAD
+
                                 require_once('connection.php');
-=======
+
                                 include('connection.php');
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                                 $un=$_SESSION['username'];
 
                                 $q = "select * from employees where user_name='$un'";
                                 $res = mysqli_query($con, $q);
                                 While($row = mysqli_fetch_array($res)) { ?>
-<<<<<<< HEAD
+
 
                             <div>
                                 <img class="img-profile rounded-circle" height="100px" width="100px"
@@ -85,7 +79,7 @@
                             </div><br>
 
                             <div class="profile-item">
-=======
+
                                 
                             <div>
                             <img class="img-profile rounded-circle" height="100px" width="100px" src="Uploads/<?php echo $row['14']; ?>"/>
@@ -93,7 +87,6 @@
                             </div><br>
 
                               <div class="profile-item">
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                                 <label>User Name:</label>
                                 <span><?php echo $row['5']; ?></span>
                             </div>
@@ -144,11 +137,10 @@
                                 <span><?php echo $row['11']; ?></span>
 
                             </div>
-<<<<<<< HEAD
 
-=======
+
+
                             
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                             <div class="profile-item">
                                 <label>Department:</label>
                                 <span><?php echo $row['12']; ?></span>
@@ -159,26 +151,25 @@
                                 <label>Degree:</label>
                                 <span><?php echo $row['13']; ?></span>
 
-<<<<<<< HEAD
+
                             </div>
 
                             <br>
 
                             <div class="p-t-20">
                                 <a href="profile.php?edit=<?php echo $row['id']; ?>">
-=======
+
                                 </div>
                             
                             <br>
 
                             <div class="p-t-20">
                             <a href="profile.php?edit=<?php echo $row['id']; ?>">
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                                     <button class="btn btn--radius btn-success" type="button">Update Info</button>
                                 </a>
                                 <?php  }  ?>
 
-<<<<<<< HEAD
+
 
 
         </form>
@@ -211,7 +202,7 @@
 
 
 
-=======
+
                                 <!-- Other form elements -->
 
         </form>
@@ -244,16 +235,14 @@
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
-<<<<<<< HEAD
 
-=======
+
+
     <!-- Logout Modal-->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -284,15 +273,14 @@
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <script src="js/demo/datatables-demo.js"></script>
-<<<<<<< HEAD
+
     <script>
     window.history.pushState(null, "", window.location.href);
     window.onpopstate = function() {
         window.history.pushState(null, "", window.location.href);
     };
     </script>
-=======
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
+
 
 </body>
 

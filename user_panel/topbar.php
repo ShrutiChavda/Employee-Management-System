@@ -1,7 +1,7 @@
 <link href="img/favicon.png" rel="icon">
 
 <!-- Content Wrapper -->
-<<<<<<< HEAD
+
 <div id="content-wrapper" class="d-flex flex-column">
 
     <!-- Main Content -->
@@ -65,8 +65,35 @@
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         <?php
-=======
-  <div id="content-wrapper" class="d-flex flex-column">
+                        $un=$_SESSION['username'];
+                        echo "<span class='mr-2 d-none d-lg-inline text-gray-600 small'>$un</span>";
+                        ?>
+                        <img class="img-profile rounded-circle"
+                            src="https://ui-avatars.com/api/?name=<?php echo urlencode($un); ?>&background=007bff&color=fff">
+                    </a>
+                    <!-- Dropdown - User Information -->
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                        aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="#">
+                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Profile
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Settings
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="logout.php">
+                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Logout
+                        </a>
+                    </div>
+                </li>
+
+            </ul>
+        </nav>
+
+        <div id="content-wrapper" class="d-flex flex-column">
 
       <!-- Main Content -->
       <div id="content">
@@ -129,12 +156,11 @@
                       <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <?php
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                           $un=$_SESSION['username'];
                         $q = "select * from employees where user_name='$un'";
                         $res = mysqli_query($con, $q);
                         while ($row = mysqli_fetch_array($res)) { ?>
-<<<<<<< HEAD
+
                         <span class="mr-2 d-none d-lg-inline text-gray-600 small"><b><?php echo $row['4']; ?></b></span>
                         <img class="img-profile rounded-circle" src="Uploads/<?php echo $row['14'];?>"><?php  }  ?>
                     </a>
@@ -151,12 +177,7 @@
                             <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                             Change Password
                         </a>
-                        <!--
-=======
-                          <span class="mr-2 d-none d-lg-inline text-gray-600 small"><b><?php echo $row['4']; ?></b></span>
-                          <img class="img-profile rounded-circle" src="Uploads/<?php echo $row['14'];?>"><?php  }  ?>
-                      </a>
-                      <!-- Dropdown - User Information -->
+                      
                       <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                           aria-labelledby="userDropdown">
 
@@ -170,12 +191,11 @@
                               Change Password
                           </a>
                           <!--
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                     <a class="dropdown-item" href="#">
                         <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                         Activity Log
                     </a> -->
-<<<<<<< HEAD
+
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                             <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -194,7 +214,7 @@
             window.history.pushState(null, "", window.location.href);
         };
         </script>
-=======
+
                           <div class="dropdown-divider"></div>
                           <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                               <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -206,4 +226,3 @@
 
           </nav>
           <!-- End of Topbar -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310

@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+
 <?php require_once('session.php'); ?>
-=======
-<?php include('session.php'); ?>
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 <?php
 if(isset($_SESSION['user_id'])){
  $id=$_SESSION['user_id'];{
@@ -32,7 +29,7 @@ if(isset($_SESSION['user_id'])){
 
 <body id="page-top">
 
-<<<<<<< HEAD
+
     <?php require_once('sidebar.php'); ?>
 
 
@@ -42,7 +39,7 @@ if(isset($_SESSION['user_id'])){
     <div class="container-fluid">
 
 
-=======
+
     <?php include('sidebar.php'); ?>
 
 
@@ -52,7 +49,6 @@ if(isset($_SESSION['user_id'])){
     <div class="container-fluid">
 
         <!-- DataTales Example -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-success">Project Status</h6>
@@ -70,25 +66,21 @@ if(isset($_SESSION['user_id'])){
                                 <th>Status</th>
                                 <th>Submit</th>
                                 <th>Submission</th>
-<<<<<<< HEAD
 
-=======
+
+
                                 <!-- <th>Details</th> -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
                             </tr>
                         </thead>
                         <tbody>
-<<<<<<< HEAD
+
                             <?php
-=======
-    <?php
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     $q = "SELECT * FROM projects where leader_id=$id";
     $res = mysqli_query($con, $q);
     while ($row = mysqli_fetch_array($res)) {
     ?>
-<<<<<<< HEAD
+
                             <tr>
                                 <td><?php echo $row['p_name']; ?></td>
                                 <td><?php echo $row['leader_name']; ?></td>
@@ -113,7 +105,7 @@ if(isset($_SESSION['user_id'])){
     }
     ?>
                         </tbody>
-=======
+
         <tr>
             <td><?php echo $row['p_name']; ?></td>
             <td><?php echo $row['leader_name']; ?></td>
@@ -136,7 +128,6 @@ if(isset($_SESSION['user_id'])){
     }
     ?>
 </tbody>
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
                     </table>
                 </div>
@@ -146,23 +137,22 @@ if(isset($_SESSION['user_id'])){
 
 
     </div>
-<<<<<<< HEAD
+
 
 
     </div>
 
-=======
+
     <!-- /.container-fluid -->
 
     </div>
     <!-- End of Main Content -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <?php
-                            } }
+                            } 
                             ?>
 
     <?php
-<<<<<<< HEAD
+
     require_once('footer.php');
     ?>
 
@@ -173,7 +163,7 @@ if(isset($_SESSION['user_id'])){
 
 
 
-=======
+
     include_once('footer.php');
     ?>
 
@@ -184,16 +174,14 @@ if(isset($_SESSION['user_id'])){
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
-<<<<<<< HEAD
 
-=======
+
+
     <!-- Logout Modal-->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -215,7 +203,7 @@ if(isset($_SESSION['user_id'])){
     </div>
 
 
-<<<<<<< HEAD
+
 
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -243,7 +231,7 @@ if(isset($_SESSION['user_id'])){
 </body>
 
 </html>
-=======
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -265,4 +253,3 @@ if(isset($_SESSION['user_id'])){
 </body>
 
 </html>
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310

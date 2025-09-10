@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+
 <?php require_once('session.php');  ?>
-=======
-<?php include('session.php');  ?>
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,27 +23,25 @@
 </head>
 
 <body id="page-top">
-<<<<<<< HEAD
+
     <?php require_once('sidebar.php'); ?>
 
 
     <?php require_once('topbar.php'); ?>
-=======
+
     <?php include('sidebar.php'); ?>
 
 
     <?php include('topbar.php'); ?>
     <!-- Begin Page Content -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
     <div class="container-fluid"><br>
         <a href="request_tours.php"><button class="btn btn-success">+ Request Tours</button><br><br></a>
 
-<<<<<<< HEAD
-=======
+
+
         <!-- DataTales Example -->
         <!-- DataTales Example -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-success">Employees</h6>
@@ -79,7 +74,7 @@
                             $count = mysqli_num_rows($result);
                             while ($a = mysqli_fetch_array($result)) {
                             ?>
-<<<<<<< HEAD
+
                             <tr>
                                 <td><?php echo $a[1]; ?></td>
                                 <td><?php echo $a[2]; ?></td>
@@ -96,24 +91,6 @@
                                 <td><?php echo $a[13]; ?></td>
                                 <?php } ?>
                             </tr>
-=======
-                                <tr>
-                                    <td><?php echo $a[1]; ?></td>
-                                    <td><?php echo $a[2]; ?></td>
-                                    <td><?php echo $a[3]; ?></td>
-                                    <td><?php echo $a[4]; ?></td>
-                                    <td><?php echo $a[5]; ?></td>
-                                    <td><?php echo $a[6]; ?></td>
-                                    <td><?php echo $a[7]; ?></td>
-                                    <td><?php echo $a[8]; ?></td>
-                                    <td><?php echo $a[9]; ?></td>
-                                    <td><?php echo $a[10]; ?></td>
-                                    <td><?php echo $a[11]; ?></td>
-                                    <td>₹<?php echo $a[12]; ?></td>
-                                    <td><?php echo $a[13]; ?></td>
-                                <?php } ?>
-                                </tr>
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
                         </tbody>
                     </table>
@@ -123,7 +100,7 @@
 
 
     </div>
-<<<<<<< HEAD
+
 
     </div>
 
@@ -138,7 +115,7 @@
     </a>
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-=======
+
     <!-- /.container-fluid -->
 
     </div>
@@ -161,7 +138,6 @@
 
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -173,19 +149,18 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-<<<<<<< HEAD
+
                     <a class="btn btn-success"
                         href="http://localhost/Employee%20Management%20System/user_panel/logout.php">Logout</a>
-=======
+
                     <a class="btn btn-success" href="http://localhost/Employee%20Management%20System/user_panel/logout.php">Logout</a>
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                 </div>
             </div>
         </div>
     </div>
 
 
-<<<<<<< HEAD
+
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -200,7 +175,7 @@
         window.history.pushState(null, "", window.location.href);
     };
     </script>
-=======
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -218,7 +193,6 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
 
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
 </body>
 

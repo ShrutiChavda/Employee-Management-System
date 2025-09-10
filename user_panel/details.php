@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-<?php  require_once('session.php');  ?>
-<?php
+
+<?php  require_once('session.php'); 
 require_once('connection.php');
-=======
-<?php  include('session.php');  ?>
-<?php
-include('connection.php');
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
+
  if(isset($_GET['edit']))
  {
     $id=$_GET['edit'];
@@ -31,11 +26,10 @@ $result = mysqli_query($con, $query);
     <link href="img/favicon.png" rel="icon">
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="css/sb-admin-2.css" rel="stylesheet">
-<<<<<<< HEAD
 
-=======
+
+
     <!-- <script src="js/jquery-3.6.4.min.js"></script> -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <script src="js/search.js"></script>
 
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -52,17 +46,16 @@ $result = mysqli_query($con, $query);
 
 <body id="page-top">
 
-<<<<<<< HEAD
+
     <?php require_once('sidebar.php'); ?>
 
 
     <?php require_once('topbar.php'); ?>
-=======
+
     <?php include('sidebar.php'); ?>
 
 
     <?php include('topbar.php'); ?>
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
     <div class="container-fluid">
         <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
@@ -78,7 +71,7 @@ $result = mysqli_query($con, $query);
                             // Output data of each row
                             if($row = mysqli_fetch_assoc($result)) {
                         ?>
-<<<<<<< HEAD
+
                         <div>
                             <p>Project Name: <?php echo $row['p_name']; ?></p>
                         </div>
@@ -101,7 +94,7 @@ $result = mysqli_query($con, $query);
                             <p>Status: <?php echo $row['status']; ?></p>
                         </div>
                         <hr>
-=======
+
                                 <div>
                                     <p>Project Name: <?php echo $row['p_name']; ?></p>
                                 </div>
@@ -124,7 +117,6 @@ $result = mysqli_query($con, $query);
                                     <p>Status: <?php echo $row['status']; ?></p>
                                 </div>
                                 <hr>
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                         <?php
                             }
                         } 
@@ -135,7 +127,7 @@ $result = mysqli_query($con, $query);
             </div>
         </div>
     </div>
-<<<<<<< HEAD
+
     </div>
 
     <?php
@@ -152,7 +144,7 @@ $result = mysqli_query($con, $query);
 
 
 
-=======
+
                     </div>
 
     <?php
@@ -169,16 +161,14 @@ $result = mysqli_query($con, $query);
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
-<<<<<<< HEAD
 
-=======
+
+
     <!-- Logout Modal-->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -200,11 +190,10 @@ $result = mysqli_query($con, $query);
     </div>
 
 
-<<<<<<< HEAD
 
-=======
+
+
     <!-- Bootstrap core JavaScript-->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="js/sb-admin-2.min.js"></script>
@@ -212,15 +201,14 @@ $result = mysqli_query($con, $query);
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <script src="js/demo/datatables-demo.js"></script>
 
-<<<<<<< HEAD
+
     <script>
     window.history.pushState(null, "", window.location.href);
     window.onpopstate = function() {
         window.history.pushState(null, "", window.location.href);
     };
     </script>
-=======
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
+
 
 </body>
 

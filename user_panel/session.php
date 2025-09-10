@@ -1,7 +1,4 @@
 <?php
-<<<<<<< HEAD
-
-
 session_start();
 
 if (!isset($_SESSION['username'])) {
@@ -10,10 +7,6 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 require_once('connection.php');
-=======
-session_start();
-include('connection.php');
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
 if ($_SESSION['username']) {
     $username = $_SESSION['username'];
@@ -36,10 +29,9 @@ if ($_SESSION['username']) {
             echo "<script>window.location.replace('http://localhost/Employee%20Management%20System/login.php');</script>"; 
             exit();
         }
-<<<<<<< HEAD
+
         
-=======
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
+
     }
     
 }
@@ -47,13 +39,12 @@ if ($_SESSION['username']) {
 
 //If the user closes the browser's window then session will get destroyed
 if (!isset($_SESSION['username'])) {
-<<<<<<< HEAD
+
 $sql_update_status = "UPDATE emp_login 
                       SET status = 'inactive' 
                       WHERE user_name = '$username'";
-=======
+
     $sql_update_status = "UPDATE emp_login SET status = 'inactive'";
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     mysqli_query($con, $sql_update_status);
     header("Location: http://localhost/Employee%20Management%20System/login.php");
     exit();

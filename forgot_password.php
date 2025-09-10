@@ -116,11 +116,10 @@ if (isset($_POST['sub'])) {
                 $mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers
                 $mail->SMTPAuth = true; // Enable SMTP authentication
                 $mail->Username = 'chavdashruti516@gmail.com'; // SMTP username
-<<<<<<< HEAD
+
                 $mail->Password = 'pvjb uqxn nqfx kajo'; // SMTP password
-=======
+
                 $mail->Password = 'xwig fjqp gnea fqml'; // SMTP password
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                 $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted
                 $mail->Port = 465; // TCP port to connect to
                 $mail->SMTPDebug = 0;                               //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`

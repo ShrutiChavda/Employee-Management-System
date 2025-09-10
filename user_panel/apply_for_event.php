@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php  
 require_once('session.php'); 
 
@@ -11,31 +11,24 @@ $event_details = [];
 $idd = 0;
 if(isset($_GET['apply'])) {
     $idd = intval($_GET['apply']); // security: cast to int
-=======
-<?php  include('session.php'); 
-
-$id = $_SESSION['user_id'];
-$q1="select * from employees where id=$id";
-$result = mysqli_query($con, $q1);
-$employee_detail = mysqli_fetch_assoc($result);
 
 if(isset($_GET['apply'])) {
     // Prepare a statement
     $idd=$_GET['apply'];
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
+
     $query = "SELECT * FROM events WHERE id=$idd";
     $res = mysqli_query($con, $query);
     $event_details = mysqli_fetch_assoc($res);
 }
 
 if(isset($_POST['btn'])) { 
-<<<<<<< HEAD
+
     $i1 = $_POST['id'];
-=======
+
 
 
     $i1=$_POST['id'];
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
+
     $employee_name = $_POST['emp'];
     $mobile_number = $_POST['mb'];
     $event_date = $_POST['event_date'];
@@ -45,7 +38,7 @@ if(isset($_POST['btn'])) {
     $title_of_participation = $_POST['service'];
     $additional_information = $_POST['additional_info'];
     
-<<<<<<< HEAD
+
     // Check if already applied
     $check_query = "SELECT * FROM event_pt WHERE event_id='$i1' AND employee_name='$employee_name'";
     $check_result = mysqli_query($con, $check_query);
@@ -91,7 +84,7 @@ if(isset($_POST['btn'])) {
         }
     }
 }
-=======
+
     
     $check_query = "SELECT * FROM event_pt WHERE event_id= '$i1'";
     $check_result = mysqli_query($con, $check_query);
@@ -137,19 +130,19 @@ if(isset($_GET['apply'])) {
     }
 }
 
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<<<<<<< HEAD
+
     <meta charset="utf-8">
     <title>Apply for Event</title>
     <link href="img/favicon.png" rel="icon">
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="css/sb-admin-2.css" rel="stylesheet">
-=======
+
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -166,18 +159,18 @@ if(isset($_GET['apply'])) {
     <script src="js/search.js"></script>
 
 
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
+
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="css/main.css">
-=======
 
     <link rel="stylesheet" href="css/main.css">
 
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
+
+    <link rel="stylesheet" href="css/main.css">
+
+
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/apply_for_event.js"></script>
@@ -185,13 +178,13 @@ if(isset($_GET['apply'])) {
 
 <body id="page-top">
 
-<<<<<<< HEAD
+
     <?php require_once('sidebar.php'); ?>
     <?php require_once('topbar.php'); ?>
 
     <div class="container-fluid">
         <form id="registrationForm" action="apply_for_event.php?apply=<?php echo $idd; ?>" method="post">
-=======
+
     <?php include('sidebar.php'); ?>
 
 
@@ -200,12 +193,12 @@ if(isset($_GET['apply'])) {
 
     <div class="container-fluid">
         <form id="registrationForm" action="apply_for_event.php" method="post" enctype="multipart/form-data">
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
+
 
             <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
                 <div class="wrapper wrapper--w680">
                     <div class="card card-1">
-<<<<<<< HEAD
+
                         <div class="card-body">
                             <h2 class="title">Apply for Event</h2>
 
@@ -287,7 +280,7 @@ if(isset($_GET['apply'])) {
     </div>
 
     <?php require_once('footer.php'); ?>
-=======
+
                         <div class="card-heading"></div>
                         <div class="card-body">
                             <h2 class="title">Apply for Event</h2>
@@ -440,23 +433,23 @@ if(isset($_GET['apply'])) {
 
 
     <!-- Bootstrap core JavaScript-->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
+
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="js/sb-admin-2.min.js"></script>
     <script src="vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <script src="js/demo/datatables-demo.js"></script>
-<<<<<<< HEAD
+
     <script>
     window.history.pushState(null, "", window.location.href);
     window.onpopstate = function() {
         window.history.pushState(null, "", window.location.href);
     };
     </script>
-=======
 
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
+
+
 
 </body>
 

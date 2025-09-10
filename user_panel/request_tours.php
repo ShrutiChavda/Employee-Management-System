@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+
 <?php require_once('session.php');  ?>
-=======
-<?php include('session.php');  ?>
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,19 +35,18 @@
 
 <body id="page-top">
 
-<<<<<<< HEAD
+
     <?php require_once('sidebar.php'); ?>
 
 
     <?php require_once('topbar.php'); ?>
 
-=======
+
     <?php include('sidebar.php'); ?>
 
 
     <?php include('topbar.php'); ?>
     <!-- Begin Page Content -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <div class="container-fluid">
 
         <form id="registrationForm" action="request_tours.php" method="POST">
@@ -72,43 +68,39 @@
 
                             <LABEL>Employee Name</LABEL>
                             <div class="input-group1">
-<<<<<<< HEAD
+
                                 <input class="input--style-1" type="text" placeholder="Employee Name" name="nm"
                                     readonly />
-=======
+
                                 <input class="input--style-1" type="text" placeholder="Employee Name" name="nm" readonly />
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                                 <span id="nm_err" class="error1 p-1"></span>
                             </div>
 
                             <LABEL>Email</LABEL>
                             <div class="input-group1">
-<<<<<<< HEAD
+
                                 <input class="input--style-1" type="text" placeholder="Email" name="em" readonly />
-=======
+
                                 <input class="input--style-1" type="text" placeholder="Email" name="em" readonly/>
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                                 <span id="em_err" class="error1 p-1"></span>
                             </div>
 
                             <LABEL>Department</LABEL>
                             <div class="input-group1">
-<<<<<<< HEAD
+
                                 <input class="input--style-1" type="text" placeholder="Department" name="dep"
                                     readonly />
-=======
+
                                 <input class="input--style-1" type="text" placeholder="Department" name="dep" readonly/>
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                                 <span id="dep_err" class="error1 p-1"></span>
                             </div>
 
                             <LABEL>Contact</LABEL>
                             <div class="input-group1">
-<<<<<<< HEAD
+
                                 <input class="input--style-1" type="number" placeholder="Contact" name="pn" readonly />
-=======
+
                                 <input class="input--style-1" type="number" placeholder="Contact" name="pn" readonly/>
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                                 <span id="pn_err" class="error1 p-1"></span>
                             </div>
 
@@ -131,12 +123,11 @@
                             <LABEL>Description</LABEL>
 
                             <div class="input-group1">
-<<<<<<< HEAD
+
                                 <textarea class="input--style-1" type="text" placeholder="Description"
                                     name="des"></textarea>
-=======
+
                                 <textarea class="input--style-1" type="text" placeholder="Description" name="des"></textarea>
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                                 <span id="des_err" class="error1 p-1"></span>
                             </div>
 
@@ -161,12 +152,11 @@
                             <LABEL>Total Cost</LABEL>
 
                             <div class="input-group1">
-<<<<<<< HEAD
+
                                 <input class="input--style-1" type="number" placeholder="Total Estimated cost"
                                     name="cs"></input>
-=======
+
                                 <input class="input--style-1" type="number" placeholder="Total Estimated cost" name="cs"></input>
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                                 <span id="cs_err" class="error1 p-1"></span>
                             </div>
 
@@ -185,16 +175,15 @@
     </div>
 
     </div>
-<<<<<<< HEAD
 
-=======
+
+
     <!-- /.container-fluid -->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 
 
 
     <?php
-<<<<<<< HEAD
+
     require_once('footer.php');
     ?>
 
@@ -205,7 +194,7 @@
 
 
 
-=======
+
     include_once('footer.php');
     ?>
 
@@ -216,19 +205,17 @@
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
-<<<<<<< HEAD
+
 
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-=======
+
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -240,12 +227,11 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-<<<<<<< HEAD
+
                     <a class="btn btn-success"
                         href="http://localhost/Employee%20Management%20System/user_panel/logout.php">Logout</a>
-=======
+
                     <a class="btn btn-success" href="http://localhost/Employee%20Management%20System/user_panel/logout.php">Logout</a>
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
                 </div>
             </div>
         </div>
@@ -261,25 +247,23 @@
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <script src="js/demo/datatables-demo.js"></script>
-<<<<<<< HEAD
+
     <script>
     window.history.pushState(null, "", window.location.href);
     window.onpopstate = function() {
         window.history.pushState(null, "", window.location.href);
     };
     </script>
-=======
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
+
 
 </body>
 
 </html>
 <?php
-<<<<<<< HEAD
+
 require_once('connection.php');
-=======
+
 include('connection.php');
->>>>>>> ba9599d800c76f6076b2fa687cf5e6f7d060b310
 if (isset($_POST['submit'])) {
     // echo "hi";
     $eid = $_POST['eid'];
