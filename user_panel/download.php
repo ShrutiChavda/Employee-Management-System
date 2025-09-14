@@ -1,5 +1,4 @@
 <?php
-
 require_once('connection.php');
 
 if(isset($_GET['project_id'])) {
@@ -40,11 +39,9 @@ if(isset($_GET['project_id'])) {
 }
 ?>
 
-
 <script>
 window.history.pushState(null, "", window.location.href);
 window.onpopstate = function() {
     window.history.pushState(null, "", window.location.href);
 };
 </script>
-

@@ -1,4 +1,3 @@
-
 <?php require_once('session.php'); ?>
 <?php
 if(isset($_SESSION['user_id'])){
@@ -29,7 +28,6 @@ if(isset($_SESSION['user_id'])){
 
 <body id="page-top">
 
-
     <?php require_once('sidebar.php'); ?>
 
 
@@ -39,16 +37,6 @@ if(isset($_SESSION['user_id'])){
     <div class="container-fluid">
 
 
-
-    <?php include('sidebar.php'); ?>
-
-
-    <?php include('topbar.php'); ?>
-
-    <!-- Begin Page Content -->
-    <div class="container-fluid">
-
-        <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-success">Project Status</h6>
@@ -68,19 +56,14 @@ if(isset($_SESSION['user_id'])){
                                 <th>Submission</th>
 
 
-
-                                <!-- <th>Details</th> -->
-
                             </tr>
                         </thead>
                         <tbody>
-
                             <?php
     $q = "SELECT * FROM projects where leader_id=$id";
     $res = mysqli_query($con, $q);
     while ($row = mysqli_fetch_array($res)) {
     ?>
-
                             <tr>
                                 <td><?php echo $row['p_name']; ?></td>
                                 <td><?php echo $row['leader_name']; ?></td>
@@ -106,29 +89,6 @@ if(isset($_SESSION['user_id'])){
     ?>
                         </tbody>
 
-        <tr>
-            <td><?php echo $row['p_name']; ?></td>
-            <td><?php echo $row['leader_name']; ?></td>
-            <td><?php echo $row['due_date']; ?></td>
-            <td><?php echo $row['sub_date']; ?></td>
-            <td><?php echo $row['points']; ?></td>
-            <td><?php echo $row['status']; ?></td>
-            <td>
-                <a href="submit.php?submit=<?php echo $row[0]; ?>" class="btn btn-success btn-circle btn-sm">
-                    <i class="fas fa-check"></i>
-                </a>
-            </td>
-            <td>
-                <a class="btn btn-primary btn-circle btn-sm" href="download.php?project_id=<?php echo $row['p_id']; ?>">
-                    <i class="fas fa-download"></i>
-                </a>
-            </td>
-        </tr>
-    <?php
-    }
-    ?>
-</tbody>
-
                     </table>
                 </div>
             </div>
@@ -139,20 +99,13 @@ if(isset($_SESSION['user_id'])){
     </div>
 
 
-
     </div>
 
-
-    <!-- /.container-fluid -->
-
-    </div>
-    <!-- End of Main Content -->
     <?php
-                            } 
+                            } }
                             ?>
 
     <?php
-
     require_once('footer.php');
     ?>
 
@@ -163,25 +116,11 @@ if(isset($_SESSION['user_id'])){
 
 
 
-
-    include_once('footer.php');
-    ?>
-
-    </div>
-    <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
 
-
-
-    <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -201,7 +140,6 @@ if(isset($_SESSION['user_id'])){
             </div>
         </div>
     </div>
-
 
 
 
@@ -227,28 +165,6 @@ if(isset($_SESSION['user_id'])){
         window.history.pushState(null, "", window.location.href);
     };
     </script>
-
-</body>
-
-</html>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
-
 
 </body>
 

@@ -1,7 +1,6 @@
-
 <?php  require_once('session.php');  ?>
 <?php
-include('connection.php');
+require_once('connection.php');
 $id=$_SESSION['user_id'];
 
 if (isset($_POST['submit'])) {
@@ -70,18 +69,11 @@ if (isset($_POST['submit'])) {
 
 <body id="page-top">
 
-
     <?php require_once('sidebar.php'); ?>
 
 
     <?php require_once('topbar.php'); ?>
 
-
-    <?php include('sidebar.php'); ?>
-
-
-    <?php include('topbar.php'); ?>
-    <!-- Begin Page Content -->
     <?php
                             $q="select * from employees where id=$id";
                             $res=mysqli_query($con,$q);
@@ -99,18 +91,12 @@ if (isset($_POST['submit'])) {
                         <div class="card-body">
                             <h2 class="title">Apply For leaves</h2>
 
-
-
-                        
                             <div>
                                 <label>Employee Name<label>
                             </div>
                             <div>
-
                                 <input class="input--style-1" type="text" placeholder="Name" name="nm"
                                     value="<?php echo $row['full_name']; ?>" readonly />
-
-                                <input class="input--style-1" type="text" placeholder="Name" name="nm" value="<?php echo $row['full_name']; ?>" readonly/>
                                 <span id="nm_err" class="error1 p-1"></span>
                             </div>
 
@@ -127,11 +113,8 @@ if (isset($_POST['submit'])) {
                             <div>
                                 <p>Start date</p>
                                 <div>
-
                                     <input class="input--style-1" type="date" placeholder="start date" id="sd"
                                         name="sd" />
-
-                                    <input class="input--style-1" type="date" placeholder="start date" id="sd" name="sd" />
                                     <span id="sd_err" class="error1 p-1"></span>
                                 </div>
                             </div>
@@ -139,11 +122,8 @@ if (isset($_POST['submit'])) {
                             <div>
                                 <p>End date</p>
                                 <div>
-
                                     <input class="input--style-1" type="date" placeholder="End date" id="ed"
                                         name="ed" />
-
-                                    <input class="input--style-1" type="date" placeholder="End date" id="ed" name="ed" />
                                     <span id="ed_err" class="error1 p-1"></span>
                                 </div>
                             </div>
@@ -164,14 +144,10 @@ if (isset($_POST['submit'])) {
     </div>
 
 
-
-    <!-- /.container-fluid -->
-
     <?php  }  ?>
 
 
     <?php
-
           require_once('footer.php');
           ?>
 
@@ -182,25 +158,11 @@ if (isset($_POST['submit'])) {
 
 
 
-
-          include_once('footer.php');
-          ?>
-
-    </div>
-    <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
 
-
-
-    <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -231,14 +193,12 @@ if (isset($_POST['submit'])) {
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <script src="js/demo/datatables-demo.js"></script>
-
     <script>
     window.history.pushState(null, "", window.location.href);
     window.onpopstate = function() {
         window.history.pushState(null, "", window.location.href);
     };
     </script>
-
 
 </body>
 

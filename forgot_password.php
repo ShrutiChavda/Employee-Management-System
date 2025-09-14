@@ -116,10 +116,7 @@ if (isset($_POST['sub'])) {
                 $mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers
                 $mail->SMTPAuth = true; // Enable SMTP authentication
                 $mail->Username = 'chavdashruti516@gmail.com'; // SMTP username
-
                 $mail->Password = 'pvjb uqxn nqfx kajo'; // SMTP password
-
-                $mail->Password = 'xwig fjqp gnea fqml'; // SMTP password
                 $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted
                 $mail->Port = 465; // TCP port to connect to
                 $mail->SMTPDebug = 0;                               //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
@@ -139,11 +136,11 @@ if (isset($_POST['sub'])) {
 					//Content
 					$mail->isHTML(true);                                  //Set email format to HTML
 					$mail->Subject = 'Password reset link for Employees';
-					$mail->Body    = 'OTP for password reset is ' . $otp . ' <br/>This is the password reset link for your account. The link is valid for 1 minute.=>   ' . @$link .  "<br/> Please use forgot password facility again if the link has expired";
+					$mail->Body    = 'OTP for password reset is ' . $otp . ' <br/>This is the password reset link for your account. The link is valid for 1 minute.<br/> ' . @$link .  "<br/> Please use forgot password facility again if the link has expired";
 					$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 					if ($mail->send()) {
-						echo '<script>alert("Password reset link has been sent to your registered email.Please check the spam also.");</script>';
+						echo '<script>alert("Password reset link has been sent to your registered email. Please check the spam also.");</script>';
 					}
 				}catch (Exception $e) {
                     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

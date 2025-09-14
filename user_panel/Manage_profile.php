@@ -1,4 +1,3 @@
-
 <?php  require_once('session.php');  ?>
 
 <!DOCTYPE html>
@@ -34,16 +33,10 @@
 </head>
 
 <body id="page-top">
-
     <?php require_once('sidebar.php'); ?>
     <?php require_once('topbar.php'); ?>
 
 
-
-    <?php include('sidebar.php'); ?>
-    <?php include('topbar.php'); ?>
-
-    <!-- Begin Page Content -->
     <div class="container-fluid">
 
         <form id="registrationForm" style="text-align:center">
@@ -54,23 +47,16 @@
                         <div class="card-heading"></div>
                         <div class="card-body">
 
-
-
-                            <!-- Other HTML code here -->
                             <h2 class="title">Profile Information</h2>
 
 
                             <?php  
-
                                 require_once('connection.php');
-
-                                include('connection.php');
                                 $un=$_SESSION['username'];
 
                                 $q = "select * from employees where user_name='$un'";
                                 $res = mysqli_query($con, $q);
                                 While($row = mysqli_fetch_array($res)) { ?>
-
 
                             <div>
                                 <img class="img-profile rounded-circle" height="100px" width="100px"
@@ -79,14 +65,6 @@
                             </div><br>
 
                             <div class="profile-item">
-
-                                
-                            <div>
-                            <img class="img-profile rounded-circle" height="100px" width="100px" src="Uploads/<?php echo $row['14']; ?>"/>
-                            
-                            </div><br>
-
-                              <div class="profile-item">
                                 <label>User Name:</label>
                                 <span><?php echo $row['5']; ?></span>
                             </div>
@@ -138,9 +116,6 @@
 
                             </div>
 
-
-
-                            
                             <div class="profile-item">
                                 <label>Department:</label>
                                 <span><?php echo $row['12']; ?></span>
@@ -151,24 +126,15 @@
                                 <label>Degree:</label>
                                 <span><?php echo $row['13']; ?></span>
 
-
                             </div>
 
                             <br>
 
                             <div class="p-t-20">
                                 <a href="profile.php?edit=<?php echo $row['id']; ?>">
-
-                                </div>
-                            
-                            <br>
-
-                            <div class="p-t-20">
-                            <a href="profile.php?edit=<?php echo $row['id']; ?>">
                                     <button class="btn btn--radius btn-success" type="button">Update Info</button>
                                 </a>
                                 <?php  }  ?>
-
 
 
 
@@ -202,47 +168,11 @@
 
 
 
-
-                                <!-- Other form elements -->
-
-        </form>
-
-        <!-- Other HTML code here -->
-
-
-    </div>
-    </div>
-    </div>
-    </div>
-   
-
-
-    </div>
-    <!-- /.container-fluid -->
-
-    </div>
-    <!-- End of Main Content -->
-
-    
-
-    </div>
-    <?php
-          include_once('footer.php');
-          ?>
-    <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
 
-
-
-    <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -273,14 +203,12 @@
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <script src="js/demo/datatables-demo.js"></script>
-
     <script>
     window.history.pushState(null, "", window.location.href);
     window.onpopstate = function() {
         window.history.pushState(null, "", window.location.href);
     };
     </script>
-
 
 </body>
 

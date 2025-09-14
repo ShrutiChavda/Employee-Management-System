@@ -1,6 +1,3 @@
-
-
-<!-- Footer -->
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
@@ -10,12 +7,9 @@
     </div>
 </footer>
 
-
 <script>
 window.history.pushState(null, "", window.location.href);
 window.onpopstate = function() {
     window.history.pushState(null, "", window.location.href);
 };
 </script>
-
-<!-- End of Footer -->

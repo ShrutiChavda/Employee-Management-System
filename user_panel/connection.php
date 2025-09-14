@@ -153,7 +153,6 @@ $con=mysqli_connect("localhost","root","","employees_management");
 //     echo "Table is not created";
 // }
 
-
 ?>
 
 <script>
@@ -162,4 +161,3 @@ $con=mysqli_connect("localhost","root","","employees_management");
       window.history.pushState(null, "", window.location.href);
   };
 </script>
-

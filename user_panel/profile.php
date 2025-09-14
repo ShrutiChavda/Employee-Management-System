@@ -1,9 +1,7 @@
-
 <?php  require_once('session.php');  ?>
 
 <?php
 require_once('connection.php');
-
 if(isset($_GET['edit']))
 {
     $a=$_GET['edit'];
@@ -37,16 +35,12 @@ if(isset($_GET['edit']))
 
     <link rel="stylesheet" href="css/main.css">
 
-
-
-    
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
 
 </head>
 
 <body id="page-top">
-
 
     <?php require_once('sidebar.php'); ?>
 
@@ -67,26 +61,6 @@ if(isset($_GET['edit']))
                             <h2 class="title">Update Profile</h2>
 
 
-
-    <?php include('sidebar.php'); ?>
-
-
-    <?php include('topbar.php'); ?>
-
-    <!-- Begin Page Content -->
-    <div class="container-fluid">
-        
-    <form id="registrationForm" method="POST" enctype="multipart/form-data">
-        <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
-            <div class="wrapper wrapper--w680">
-                <div class="card card-1">
-                    <div class="card-heading"></div>
-                    <div class="card-body">
-
-                            <!-- Other form elements -->
-                            <h2 class="title">Update Profile</h2>
-
-                            <!-- NID -->
                             <div>
                                 <p>NID</p>
                                 <div class="input-group1">
@@ -107,9 +81,6 @@ if(isset($_GET['edit']))
 
 
 
-
-
-                            <!-- First Name -->
                             <div>
                                 <p>First Name</p>
                                 <div class="input-group1">
@@ -120,9 +91,6 @@ if(isset($_GET['edit']))
                             </div>
 
 
-
-
-                            <!-- Last Name -->
                             <div>
                                 <p>Last Name</p>
                                 <div class="input-group1">
@@ -133,9 +101,6 @@ if(isset($_GET['edit']))
                             </div>
 
 
-
-
-                            <!-- Email -->
                             <div>
                                 <p>Email</p>
                                 <div class="input-group1">
@@ -146,9 +111,6 @@ if(isset($_GET['edit']))
                             </div>
 
 
-
-
-                            <!-- Date of Birth -->
                             <div>
                                 <p>Date of Birth</p>
                                 <div class="input-group1">
@@ -159,9 +121,6 @@ if(isset($_GET['edit']))
                             </div>
 
 
-
-
-                            <!-- Gender -->
                             <div>
                                 <p>Gender</p>
                                 <div class="input-group1">
@@ -177,9 +136,6 @@ if(isset($_GET['edit']))
                             </div>
 
 
-
-
-                            <!-- Contact Number -->
                             <div>
                                 <p>Contact Number</p>
                                 <div class="input-group1">
@@ -191,9 +147,6 @@ if(isset($_GET['edit']))
 
 
 
-
-
-                            <!-- Address -->
                             <div>
                                 <p>Address</p>
                                 <div class="input-group1">
@@ -222,9 +175,6 @@ if(isset($_GET['edit']))
                             </div>
 
 
-
-
-                            <!-- Degree -->
                             <div>
                                 <p> Degree</p>
                                 <?php $deg = $rec['13']; ?>
@@ -253,24 +203,24 @@ if(isset($_GET['edit']))
 
 
 
-
                             <p>Profile picture</p>
 
-<?php
+                            <?php
 if(isset($_GET['edit']))
 {
 $id= $_GET['edit'];
 $q = "select * from employees where id='$id'";
 $res = mysqli_query($con, $q);
 while ($row = mysqli_fetch_array($res)) { ?>
-
                             <img class="img-profile rounded-circle" height="100px" width="100px"
                                 src="Uploads/<?php echo $row['14']; ?>" /><?php  }}  ?>
 
                             <div class="input-group1">
                                 <input class="input--style-1" type="file" placeholder="Upload Image" name="f1"
                                     id="f1" />
-                            </div><?php
+                            </div>
+                            <?php
+
 
 $dir = "Uploads";
 
@@ -324,16 +274,10 @@ if ($file_uploaded) {
     $degree = $_POST['degree'];
     $full_name = $fn . " " . $ln;
 
-
 // require_once the code to update other fields in the database
 $ins = "UPDATE `employees` SET `first_name`='$fn',`last_name`='$ln', `birthday`='$dob',`gender`='$gender',`contact`='$contactNumber',`address`='$address',`department`='$department',`degree`='$degree'";
 if (!empty($unique_filename)) {
 // If a new file is uploaded, require_once it in the update query
-
-// Include the code to update other fields in the database
-$ins = "UPDATE `employees` SET `first_name`='$fn',`last_name`='$ln', `birthday`='$dob',`gender`='$gender',`contact`='$contactNumber',`address`='$address',`department`='$department',`degree`='$degree'";
-if (!empty($unique_filename)) {
-// If a new file is uploaded, include it in the update query
 $ins .= ", `profile_pic`='$unique_filename'";
 }
 $ins .= " WHERE `id`='$id'";
@@ -346,14 +290,13 @@ echo "Error: ";
 }
 }
 }
-}
+
 ?>
 
 
                             <div class="p-t-20">
                                 <button class="btn btn--radius btn-success" name="submit" type="submit">Submit</button>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -361,19 +304,10 @@ echo "Error: ";
 
     </div>
 
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <!-- /.container-fluid -->
     </form>
 
 
     </div>
-
 
 
     <?php
@@ -387,28 +321,11 @@ echo "Error: ";
 
 
 
-
-    <!-- End of Main Content -->
-
-    <?php
-          include_once('footer.php');
-          ?>
-
-    </div>
-    <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
 
-
-
-    <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -441,14 +358,12 @@ echo "Error: ";
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <script src="js/demo/datatables-demo.js"></script>
-
     <script>
     window.history.pushState(null, "", window.location.href);
     window.onpopstate = function() {
         window.history.pushState(null, "", window.location.href);
     };
     </script>
-
 
 </body>
 

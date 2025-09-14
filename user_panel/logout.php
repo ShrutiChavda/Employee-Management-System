@@ -16,15 +16,9 @@ if (isset($_SESSION['username'])) {
 }
 
 // Destroy the session
-
 session_unset();
 session_destroy();
 // Redirect the user to the login page
 echo "<script>window.location.replace('../login.php');</script>";
-
-// session_destroy();
-
-// Redirect the user to the login page
-header("Location: http://localhost/Employee%20Management%20System/login.php");
 exit();
 ?>

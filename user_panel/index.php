@@ -1,4 +1,3 @@
-
 <?php require_once('session.php'); ?>
 
 <!DOCTYPE html>
@@ -22,20 +21,13 @@
 </head>
 
 <body id="page-top">
-
     <?php require_once('sidebar.php'); ?>
     <?php require_once('topbar.php'); ?>
-
-    <?php include('sidebar.php'); ?>
-    <?php include('topbar.php'); ?>
 
     <div class="container-fluid">
 
         <div class="row">
 
-
-
-            <!-- Base Salary Card -->
             <div class="col-xl-3 col-md-6 mb-4">
                 <a href="salary.php" style="text-decoration: none; color: inherit;">
                     <div class="card border-left-success shadow h-100 py-2">
@@ -69,9 +61,6 @@
             </div>
 
 
-
-
-            <!-- Bonus Card -->
             <div class="col-xl-3 col-md-6 mb-4">
                 <a href="salary.php" style="text-decoration: none; color: inherit;">
                     <div class="card border-left-primary shadow h-100 py-2">
@@ -104,9 +93,6 @@
             </div>
 
 
-
-
-            <!-- Due Projects Card -->
             <div class="col-xl-3 col-md-6 mb-4">
                 <a href="project_status.php" style="text-decoration: none; color: inherit;">
                     <div class="card border-left-info shadow h-100 py-2">
@@ -150,9 +136,6 @@
             </div>
 
 
-
-
-            <!-- Leave History Card -->
             <div class="col-xl-3 col-md-6 mb-4">
                 <a href="leaves.php" style="text-decoration: none; color: inherit;">
                     <div class="card border-left-warning shadow h-100 py-2">
@@ -186,9 +169,6 @@
         </div>
 
 
-
-
-        <!-- Events Card -->
         <div class="row">
             <div class="col-xl-3 col-md-6 mb-4">
                 <a href="event.php" style="text-decoration: none; color: inherit;">
@@ -222,9 +202,6 @@
             </div>
 
 
-
-
-            <!-- Tours Card -->
             <div class="col-xl-3 col-md-6 mb-4">
                 <a href="tours.php" style="text-decoration: none; color: inherit;">
                     <div class="card border-left-primary shadow h-100 py-2">
@@ -258,9 +235,6 @@
         </div>
 
 
-
-
-        <!-- Employees Leaderboard -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-success">Employees Leaderboard</h6>
@@ -286,7 +260,6 @@
                                 $index = 1;
                                 while ($row = mysqli_fetch_assoc($result)) {
                                     ?>
-
                             <tr>
                                 <td><?php echo $index++; ?></td>
                                 <td><?php echo $row['leader_name']; ?></td>
@@ -294,7 +267,7 @@
                                 <td><?php echo $row['p_name']; ?></td>
                                 <td><?php echo $row['points']; ?></td>
                             </tr>
-                                <?php 
+                            <?php 
                                 } // End of while loop
                             } else {
                                 echo "<tr><td colspan='5'>No data available</td></tr>";
@@ -307,22 +280,14 @@
         </div>
     </div>
 
-
     <?php require_once('footer.php'); ?>
 
 
-
-    <?php include_once('footer.php'); ?>
-
-    <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
 
-
-
-    <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -342,7 +307,6 @@
             </div>
         </div>
     </div>
-
 
 
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -367,27 +331,6 @@
         window.history.pushState(null, "", window.location.href);
     };
     </script>
-
-</body>
-
-</html>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 

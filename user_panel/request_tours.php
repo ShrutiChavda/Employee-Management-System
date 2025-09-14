@@ -1,4 +1,3 @@
-
 <?php require_once('session.php');  ?>
 
 <!DOCTYPE html>
@@ -35,18 +34,11 @@
 
 <body id="page-top">
 
-
     <?php require_once('sidebar.php'); ?>
 
 
     <?php require_once('topbar.php'); ?>
 
-
-    <?php include('sidebar.php'); ?>
-
-
-    <?php include('topbar.php'); ?>
-    <!-- Begin Page Content -->
     <div class="container-fluid">
 
         <form id="registrationForm" action="request_tours.php" method="POST">
@@ -68,39 +60,27 @@
 
                             <LABEL>Employee Name</LABEL>
                             <div class="input-group1">
-
                                 <input class="input--style-1" type="text" placeholder="Employee Name" name="nm"
                                     readonly />
-
-                                <input class="input--style-1" type="text" placeholder="Employee Name" name="nm" readonly />
                                 <span id="nm_err" class="error1 p-1"></span>
                             </div>
 
                             <LABEL>Email</LABEL>
                             <div class="input-group1">
-
                                 <input class="input--style-1" type="text" placeholder="Email" name="em" readonly />
-
-                                <input class="input--style-1" type="text" placeholder="Email" name="em" readonly/>
                                 <span id="em_err" class="error1 p-1"></span>
                             </div>
 
                             <LABEL>Department</LABEL>
                             <div class="input-group1">
-
                                 <input class="input--style-1" type="text" placeholder="Department" name="dep"
                                     readonly />
-
-                                <input class="input--style-1" type="text" placeholder="Department" name="dep" readonly/>
                                 <span id="dep_err" class="error1 p-1"></span>
                             </div>
 
                             <LABEL>Contact</LABEL>
                             <div class="input-group1">
-
                                 <input class="input--style-1" type="number" placeholder="Contact" name="pn" readonly />
-
-                                <input class="input--style-1" type="number" placeholder="Contact" name="pn" readonly/>
                                 <span id="pn_err" class="error1 p-1"></span>
                             </div>
 
@@ -123,11 +103,8 @@
                             <LABEL>Description</LABEL>
 
                             <div class="input-group1">
-
                                 <textarea class="input--style-1" type="text" placeholder="Description"
                                     name="des"></textarea>
-
-                                <textarea class="input--style-1" type="text" placeholder="Description" name="des"></textarea>
                                 <span id="des_err" class="error1 p-1"></span>
                             </div>
 
@@ -152,11 +129,8 @@
                             <LABEL>Total Cost</LABEL>
 
                             <div class="input-group1">
-
                                 <input class="input--style-1" type="number" placeholder="Total Estimated cost"
                                     name="cs"></input>
-
-                                <input class="input--style-1" type="number" placeholder="Total Estimated cost" name="cs"></input>
                                 <span id="cs_err" class="error1 p-1"></span>
                             </div>
 
@@ -178,12 +152,8 @@
 
 
 
-    <!-- /.container-fluid -->
-
-
 
     <?php
-
     require_once('footer.php');
     ?>
 
@@ -194,28 +164,13 @@
 
 
 
-
-    include_once('footer.php');
-    ?>
-
-    </div>
-    <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
 
-
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -227,11 +182,8 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-
                     <a class="btn btn-success"
                         href="http://localhost/Employee%20Management%20System/user_panel/logout.php">Logout</a>
-
-                    <a class="btn btn-success" href="http://localhost/Employee%20Management%20System/user_panel/logout.php">Logout</a>
                 </div>
             </div>
         </div>
@@ -247,7 +199,6 @@
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <script src="js/demo/datatables-demo.js"></script>
-
     <script>
     window.history.pushState(null, "", window.location.href);
     window.onpopstate = function() {
@@ -255,15 +206,11 @@
     };
     </script>
 
-
 </body>
 
 </html>
 <?php
-
 require_once('connection.php');
-
-include('connection.php');
 if (isset($_POST['submit'])) {
     // echo "hi";
     $eid = $_POST['eid'];

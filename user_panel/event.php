@@ -1,6 +1,4 @@
-
 <?php  require_once('session.php');
-
   if(isset($_GET['del'])) {
     $event_id = $_GET['del'];
     // Delete event from the database
@@ -35,9 +33,6 @@
     <link href="img/favicon.png" rel="icon">
 
 
-
-
-    <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -49,7 +44,6 @@
 
 <body id="page-top">
 
-
     <?php  require_once('sidebar.php'); ?>
 
     <?php  require_once('topbar.php'); ?>
@@ -58,15 +52,6 @@
     <div class="container-fluid">
 
 
-
-    <?php  include('sidebar.php'); ?>
-
-    <?php  include('topbar.php'); ?>
-
-    <!-- Begin Page Content -->
-    <div class="container-fluid">
-
-        <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-success">Events</h6>
@@ -105,46 +90,33 @@
                                 <td><?php echo $row[6]; ?></td>
                                 <td>
 
-
                                     <a href="apply_for_event.php?apply=<?php echo $row[0];?>"
                                         class="btn btn-success btn-circle btn-sm">
-
-                                  
-                                    <a href="apply_for_event.php?apply=<?php echo $row[0];?>" class="btn btn-success btn-circle btn-sm">
                                         <i class="fas fa-check"></i>
                                     </a>
                                 </td>
                                 <td>
-
-                                    <a href="event_details.php?id=<?php echo $row[0]; ?>" class="btn btn-warning btn-circle btn-sm">
-                                        <i class="fas fa-info"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="event_details.php?id=<?php
+                                    <a href="event_details.php?id=<?php 
+        $id = $row[0]; // Assuming $row[0] contains the event ID
+        $q = "SELECT * FROM event_pt WHERE id = $id";
+        $ress = mysqli_query($con, $q);
+        if($ress && mysqli_num_rows($ress) > 0) {
+            $row = mysqli_fetch_assoc($ress); // Fetch the event data
             $a = $row['admin_remark'];
             if($a == "Applied" || $a="Approved") {
                 echo $row['id']; // Output the event ID
             } 
-        else {
+        } else {
             echo "";
         }  
       
     ?>" class="btn btn-warning btn-circle btn-sm">
-
                                         <i class="fas fa-info"></i>
                                     </a>
                                 </td>
 
 
 
-
-        <i class="fas fa-info"></i>
-    </a>
-</td>
-
-                               
-                          
                             </tr>
                             <?php } ?>
 
@@ -156,7 +128,6 @@
         </div>
 
     </div>
-
 
 
     </div>
@@ -173,31 +144,11 @@
 
 
 
-
-    <!-- /.container-fluid -->
-
-    </div>
-    <!-- End of Main Content -->
-
-    <?php
-          include_once('footer.php');
-          ?>
-
-    </div>
-    <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
 
-
-
-    <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -217,7 +168,6 @@
             </div>
         </div>
     </div>
-
 
 
 
@@ -242,23 +192,6 @@
         window.history.pushState(null, "", window.location.href);
     };
     </script>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 

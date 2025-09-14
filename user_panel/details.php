@@ -1,7 +1,6 @@
-
-<?php  require_once('session.php'); 
+<?php  require_once('session.php');  ?>
+<?php
 require_once('connection.php');
-
  if(isset($_GET['edit']))
  {
     $id=$_GET['edit'];
@@ -27,9 +26,6 @@ $result = mysqli_query($con, $query);
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="css/sb-admin-2.css" rel="stylesheet">
 
-
-
-    <!-- <script src="js/jquery-3.6.4.min.js"></script> -->
     <script src="js/search.js"></script>
 
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -46,16 +42,10 @@ $result = mysqli_query($con, $query);
 
 <body id="page-top">
 
-
     <?php require_once('sidebar.php'); ?>
 
 
     <?php require_once('topbar.php'); ?>
-
-    <?php include('sidebar.php'); ?>
-
-
-    <?php include('topbar.php'); ?>
 
     <div class="container-fluid">
         <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
@@ -71,7 +61,6 @@ $result = mysqli_query($con, $query);
                             // Output data of each row
                             if($row = mysqli_fetch_assoc($result)) {
                         ?>
-
                         <div>
                             <p>Project Name: <?php echo $row['p_name']; ?></p>
                         </div>
@@ -94,29 +83,6 @@ $result = mysqli_query($con, $query);
                             <p>Status: <?php echo $row['status']; ?></p>
                         </div>
                         <hr>
-
-                                <div>
-                                    <p>Project Name: <?php echo $row['p_name']; ?></p>
-                                </div>
-                                <div>
-                                    <p>Leader: <?php echo $row['leader_name']; ?></p>
-                                </div>
-                                <div>
-                                    <p>Due Date: <?php echo $row['due_date']; ?></p>
-                                </div>
-                                <div>
-                                    <p>Submission Date: <?php echo $row['sub_date']; ?></p>
-                                </div>
-                                <div>
-                                    <p>Points: <?php echo $row['points']; ?></p>
-                                </div>
-                                <div>
-                                    <p>Description: <?php echo $row['p_description']; ?></p>
-                                </div>
-                                <div>
-                                    <p>Status: <?php echo $row['status']; ?></p>
-                                </div>
-                                <hr>
                         <?php
                             }
                         } 
@@ -127,7 +93,6 @@ $result = mysqli_query($con, $query);
             </div>
         </div>
     </div>
-
     </div>
 
     <?php
@@ -144,31 +109,11 @@ $result = mysqli_query($con, $query);
 
 
 
-
-                    </div>
-
-    <?php
-          include_once('footer.php');
-          ?>
-
-    </div>
-    <!-- End of Main Content -->
-
-    </div>
-    <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
 
-
-
-    <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -191,9 +136,6 @@ $result = mysqli_query($con, $query);
 
 
 
-
-
-    <!-- Bootstrap core JavaScript-->
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="js/sb-admin-2.min.js"></script>
@@ -201,14 +143,12 @@ $result = mysqli_query($con, $query);
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <script src="js/demo/datatables-demo.js"></script>
 
-
     <script>
     window.history.pushState(null, "", window.location.href);
     window.onpopstate = function() {
         window.history.pushState(null, "", window.location.href);
     };
     </script>
-
 
 </body>
 

@@ -1,5 +1,4 @@
 <?php
-
 require_once('header.php');
 require_once('connection.php');
 session_start();
@@ -7,12 +6,10 @@ if (isset($_SESSION['username'])) {
     echo "<script>window.location.replace('user_panel/index.php');</script>";
     exit();
 }
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['un']) && isset($_POST['ps'])) {
         $username = $_POST['un'];
         $password = $_POST['ps'];
-
 
         // Check user login
         $sql_login = "SELECT * FROM emp_login 
@@ -39,31 +36,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Update status for admin
             mysqli_query($con, "UPDATE admin SET status='active' WHERE user_name='$username'");
 
-
-        $sql_login = "SELECT * FROM emp_login WHERE user_name = '$username' AND password = '$password'";
-        $result_login = mysqli_query($con, $sql_login);
-
-        $sql_login_admin = "SELECT * FROM admin WHERE user_name = '$username' AND password = '$password'";
-        $result_login_admin = mysqli_query($con, $sql_login_admin);
-
-        if (mysqli_num_rows($result_login) == 1) {
-            $_SESSION['username'] = $username;
-            header("Location: user_panel/index.php");
-            exit();
-        } elseif (mysqli_num_rows($result_login_admin) == 1) {
             $_SESSION['username'] = $username;
             header("Location: admin_panel/index.php");
             exit();
         } else {
-
             echo "<script>alert('Invalid username, password, or inactive account');</script>";
-
-            echo "<script>alert('Invalid username or password');</script>";
             echo "<script>window.location.replace('$_SERVER[PHP_SELF]');</script>"; 
             exit(); 
         }
     }
-}
 }
 ?>
 
@@ -138,7 +119,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     </form>
 
-
 </section>
 
 <?php
@@ -162,18 +142,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
   
-
-
-</section>
-
-<?php
-     include('call-to-action.php');
-  ?>
-
-<?php
-     include('testimonial.php');
-  ?>
-
-<?php
-     include('footer.php');
-  ?>
