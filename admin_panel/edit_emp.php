@@ -239,62 +239,51 @@ $id= $_GET['edit'];
 $q = "select * from employees where id='$id'";
 $res = mysqli_query($con, $q);
 while ($row = mysqli_fetch_array($res)) { ?>
-                            <img class="img-profile rounded-circle" height="100px" width="100px"
-                                src="img/Uploads/<?php echo "profile.jpg" ?>" /><?php  }}  ?>
+<img class="img-profile rounded-circle" height="100px" width="100px" src="../Uploads/<?php echo $row['14']; ?>"/><?php  }}  ?>
 
-                            <div class="input-group1">
-                                <input class="input--style-1" type="file" placeholder="Upload Image" name="f1"
-                                    id="f1" />
-                            </div> 
-                            <?php
-
-$dir = "img/Uploads/";
+<div class="input-group1">
+    <input class="input--style-1" type="file" placeholder="Upload Image" name="f1"
+        id="f1" />
+</div>
+<?php
+$dir = "../Uploads/";
 if (isset($_POST['submit'])) {
-$file_uploaded = false;
+    $file_uploaded = false;
 
-// Check if a file is selected
-if (!empty($_FILES['f1']['name'])) {
-// Process file upload if a file is selected
-if (!is_dir($dir)) {
-mkdir($dir);
-}
+    // Check if a file is selected
+    if (!empty($_FILES['f1']['name'])) {
+        // Process file upload if a file is selected
+        if (!is_dir($dir)) {
+            mkdir($dir);
+        }
 
-$total_files = is_array($_FILES['f1']['name']) ? count($_FILES['f1']['name']) : 1;
+        $total_files = is_array($_FILES['f1']['name']) ? count($_FILES['f1']['name']) : 1;
 
-// Loop through each uploaded file
-for ($i = 0; $i < $total_files; $i++) {
-$file_name = is_array($_FILES['f1']['name']) ? $_FILES['f1']['name'][$i] : $_FILES['f1']['name'];
-$file_type = is_array($_FILES['f1']['type']) ? $_FILES['f1']['type'][$i] : $_FILES['f1']['type'];
-$tmp_name = is_array($_FILES['f1']['tmp_name']) ? $_FILES['f1']['tmp_name'][$i] : $_FILES['f1']['tmp_name'];
+        // Loop through each uploaded file
+        for ($i = 0; $i < $total_files; $i++) {
+            $file_name = is_array($_FILES['f1']['name']) ? $_FILES['f1']['name'][$i] : $_FILES['f1']['name'];
+            $file_type = is_array($_FILES['f1']['type']) ? $_FILES['f1']['type'][$i] : $_FILES['f1']['type'];
+            $tmp_name = is_array($_FILES['f1']['tmp_name']) ? $_FILES['f1']['tmp_name'][$i] : $_FILES['f1']['tmp_name'];
 
+            if ($file_type == 'image/jpeg' || $file_type == 'image/png') {
+                // Generate unique filename
+                $unique_filename = uniqid() . '_' . $file_name;
+                $target_path = $dir . "/" . $unique_filename;
 
-if ($file_type == 'image/jpeg' || $file_type == 'image/png') {
-    // Generate unique filename
-    $unique_filename = $file_name;
-    $target_path = $dir . "/" . $unique_filename;
-    // $user_panel_target_path = $dir1 . "/" . $unique_filename; // Second path
-
-    // Move uploaded file to the first target directory
-    $a=move_uploaded_file($tmp_name, $target_path);
-    // $b=move_uploaded_file($tmp_name, $user_panel_target_path);
-    if($a)
-    {
-        $file_uploaded = true;
+                // Move uploaded file to target directory
+                if (move_uploaded_file($tmp_name, $target_path)) {
+                    $file_uploaded = true;
+                } else {
+                    echo "<span style='color:red'>Error uploading file '$file_name'. Please try again</span><br>";
+                }
+            } else {
+                echo "<span style='color:red'>Please select one file in JPG or PNG format</span><br>";
+            }
+        }
     } else {
-        echo "<span style='color:red'>Error uploading file '$file_name' to the first path. Please try again</span><br>";
+        // No file selected, proceed with form submission without updating the image
+        $file_uploaded = true;
     }
-}
- else {
-    echo "<span style='color:red'>Please select one file in JPG or PNG format</span><br>";
-}
-
-}
-} else {
-// No file selected, proceed with form submission without updating the image
-$file_uploaded = true;
-
-}
-
 if ($file_uploaded) {
     $first_name = $_POST['fn'];
     $last_name = $_POST['ln'];
@@ -307,6 +296,12 @@ if ($file_uploaded) {
     $address = $_POST['ad'];
     $degree = $_POST['degree']; 
     $status = $_POST['status'];
+    // If a file is uploaded, set profile_pic, else keep old value
+    if (!empty($_FILES['f1']['name'])) {
+        $profile_pic = $unique_filename;
+    } else {
+        $profile_pic = $rec['profile_pic']; // keep old image
+    }
 
     $ins = "UPDATE employees SET 
     first_name='$first_name', 
@@ -319,7 +314,9 @@ if ($file_uploaded) {
     full_name='$full_name',
     address='$address', 
     degree='$degree', 
-    status='$status' WHERE `id`='$a'";
+    status='$status',
+    profile_pic='$profile_pic'
+    WHERE `id`='$rec[0]'";
 
         
 if (mysqli_query($con, $ins)) {

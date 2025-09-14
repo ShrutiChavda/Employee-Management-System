@@ -95,25 +95,12 @@
                                         <i class="fas fa-check"></i>
                                     </a>
                                 </td>
-                                <td>
-                                    <a href="event_details.php?id=<?php 
-        $id = $row[0]; // Assuming $row[0] contains the event ID
-        $q = "SELECT * FROM event_pt WHERE id = $id";
-        $ress = mysqli_query($con, $q);
-        if($ress && mysqli_num_rows($ress) > 0) {
-            $row = mysqli_fetch_assoc($ress); // Fetch the event data
-            $a = $row['admin_remark'];
-            if($a == "Applied" || $a="Approved") {
-                echo $row['id']; // Output the event ID
-            } 
-        } else {
-            echo "";
-        }  
-      
-    ?>" class="btn btn-warning btn-circle btn-sm">
-                                        <i class="fas fa-info"></i>
-                                    </a>
-                                </td>
+                              <td>
+    <a href="event_details.php?id=<?php echo $row[0]; ?>" 
+       class="btn btn-warning btn-circle btn-sm">
+        <i class="fas fa-info"></i>
+    </a>
+</td>
 
 
 

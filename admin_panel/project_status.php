@@ -90,11 +90,20 @@ if(isset($_GET['del'])) {
                                 <td><?php echo $row['p_id']; ?></td>
                                 <td><?php echo $row['leader_name'] ?></td>
                                 <td><?php echo $row['leader_email'] ?></td>
-                                <td><?php echo $row['p_name'] ?></td>
+                                <td><?php echo $row['file_name'] ?></td>
                                 <td><?php echo $row['due_date']?></td>
                                 <td><?php echo $row['sub_date'] ?></td>
                                 <td><?php echo $row['points'] ?></td>
-                                <td><?php echo $row['status'] ?></td>
+<td>
+    <?php if ($row['status'] == 'submitted') { ?>
+        <a href="submission.php?file=<?php echo urlencode($row['file_name']); ?>" 
+           class="btn btn-info btn-circle btn-sm" title="Download Submission">
+            <i class="fas fa-download"></i>
+        </a>
+    <?php } else { ?>
+        <?php echo $row['status']; ?>
+    <?php } ?>
+</td>
                                 <td>
                                     <a href="assign_marks.php?edit=<?php echo $row[0]; ?>"
                                         class="btn btn-success btn-circle btn-sm">

@@ -26,41 +26,37 @@ if(isset($_POST['btn'])) {
     $title_of_participation = $_POST['service'];
     $additional_information = $_POST['additional_info'];
     
-    // Check if already applied
+    // Check if the logged-in employee already has a row for this event
     $check_query = "SELECT * FROM event_pt WHERE event_id='$i1' AND employee_name='$employee_name'";
     $check_result = mysqli_query($con, $check_query);
 
     if(mysqli_num_rows($check_result) > 0) {
-        echo "<script>alert('Record already exists for this employee!');</script>";
+        // UPDATE existing row for this employee
+        $row = mysqli_fetch_assoc($check_result);
+        $update_query = "UPDATE event_pt 
+            SET mobile_number = '$mobile_number', 
+                event_date = '$event_date', 
+                event_starting_time = '$event_starting_time', 
+                event_ending_time = '$event_ending_time', 
+                venue_address = '$venue_address', 
+                title_of_participation = '$title_of_participation', 
+                additional_information = '$additional_information', 
+                admin_remark = 'Applied' 
+            WHERE id=".$row['id'];
+        mysqli_query($con, $update_query);
+
+        echo "<script>alert('Participation updated successfully!');</script>";
         echo "<script>window.location.href='event.php';</script>";
         exit;
+
     } else {
-        // Insert new record
+        // INSERT new row for this employee
         $insert_query = "INSERT INTO event_pt 
             (event_id, employee_name, mobile_number, event_date, event_starting_time, event_ending_time, venue_address, title_of_participation, additional_information, admin_remark) 
             VALUES 
             ('$i1','$employee_name', '$mobile_number', '$event_date', '$event_starting_time', '$event_ending_time', '$venue_address', '$title_of_participation', '$additional_information','Applied')";
         
         if(mysqli_query($con, $insert_query)) {
-            
-            // If update is required (when apply is set in GET)
-            if(isset($_GET['apply'])) {
-                $idddd = intval($_GET['apply']);
-                $u_query = "UPDATE event_pt 
-                    SET employee_name = '$employee_name', 
-                        mobile_number = '$mobile_number', 
-                        event_date = '$event_date', 
-                        event_starting_time = '$event_starting_time', 
-                        event_ending_time = '$event_ending_time', 
-                        venue_address = '$venue_address', 
-                        title_of_participation = '$title_of_participation', 
-                        additional_information = '$additional_information', 
-                        admin_remark = 'Applied' 
-                    WHERE id=$idddd";
-                
-                mysqli_query($con, $u_query);
-            }
-
             echo "<script>alert('Applied successfully!');</script>";
             echo "<script>window.location.href='event.php';</script>";
             exit;
@@ -72,6 +68,7 @@ if(isset($_POST['btn'])) {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -150,23 +147,25 @@ if(isset($_POST['btn'])) {
                             <div>
                                 <p>Title of participation</p>
                                 <?php
-                            $event_pt_row = [];
-                            if($idd > 0){
-                                $event_pt_query = "SELECT * FROM event_pt WHERE event_id = $idd";
-                                $event_pt_result = mysqli_query($con, $event_pt_query);
-                                $event_pt_row = mysqli_fetch_assoc($event_pt_result);
-                            }
-                            $title_of_participation = isset($event_pt_row['title_of_participation']) ? $event_pt_row['title_of_participation'] : '';
-                            ?>
-                                <input class="input--style-1" type="text" name="service"
-                                    value="<?php echo $title_of_participation; ?>" />
+                                $event_pt_row = [];
+                                if($idd > 0){
+                                    $employee_name = $employee_detail['full_name']; // logged-in employee
+                                    $event_pt_query = "SELECT * FROM event_pt WHERE event_id = $idd AND employee_name = '$employee_name' LIMIT 1";
+                                    $event_pt_result = mysqli_query($con, $event_pt_query);
+                                    if(mysqli_num_rows($event_pt_result) > 0){
+                                        $event_pt_row = mysqli_fetch_assoc($event_pt_result);
+                                    }
+                                }
+                                ?>
+                                <input class="input--style-1" type="text" name="service"    
+                                    value="<?php echo isset($event_pt_row['title_of_participation']) ? $event_pt_row['title_of_participation'] : ''; ?>" />
                             </div>
 
                             <div>
                                 <p>Additional Information</p>
                                 <?php
-                            $additional_info = isset($event_pt_row['additional_information']) ? $event_pt_row['additional_information'] : '';
-                            ?>
+                                $additional_info = isset($event_pt_row['additional_information']) ? $event_pt_row['additional_information'] : '';
+                                ?>
                                 <input class="input--style-1" type="text" name="additional_info"
                                     value="<?php echo $additional_info; ?>" />
                             </div>

@@ -1,47 +1,42 @@
 <?php
 require_once('connection.php');
 
-if(isset($_GET['project_id'])) {
+if (isset($_GET['project_id'])) {
     $project_id = $_GET['project_id'];
 
-    // Fetch file name from the database based on project_id
     $query = "SELECT file_name FROM projects WHERE p_id = '$project_id'";
     $result = mysqli_query($con, $query);
-    if($row = mysqli_fetch_assoc($result)) {
+
+    if ($row = mysqli_fetch_assoc($result)) {
         $file_name = $row['file_name'];
 
-        if (!empty($file_name)) { // Check if file name is not empty
-            // Check if the file exists in the directory
-            $file_path = "Uploads/" . $file_name;
-            if(file_exists($file_path) && is_readable($file_path)) { // Check if the file exists and is readable
-                // Set headers for file download
+        if (!empty($file_name)) {
+            // Use absolute path
+            $file_path = __DIR__ . "/Uploads/" . $file_name;
+
+            if (file_exists($file_path) && is_readable($file_path)) {
+                // Set headers before output
                 header("Content-Type: application/octet-stream");
-                header("Content-Disposition: attachment; filename=" . $file_name);
+                header("Content-Disposition: attachment; filename=\"" . basename($file_name) . "\"");
+                header("Content-Length: " . filesize($file_path));
                 header("Pragma: no-cache");
                 header("Expires: 0");
 
-                // Read the file and output it to the browser
+                // Clear output buffer and send file
+                ob_clean();
+                flush();
                 readfile($file_path);
-                exit();
+                exit;
             } else {
-                echo "<script>alert('File not found or cannot be accessed')</script>";
+                die("File not found or not readable: " . htmlspecialchars($file_name));
             }
         } else {
-            echo "<script>alert('File not found')</script>";
-            echo "<script>window.location.href='http://localhost/Employee%20Management%20System/user_panel/project_status.php';</script>";
-
+            die("No file assigned to this project.");
         }
     } else {
-        echo "<script>alert('File not found')</script>";
+        die("Invalid project ID.");
     }
 } else {
-    echo "<script>alert('Invalid request')</script>";
+    die("Invalid request.");
 }
 ?>
-
-<script>
-window.history.pushState(null, "", window.location.href);
-window.onpopstate = function() {
-    window.history.pushState(null, "", window.location.href);
-};
-</script>

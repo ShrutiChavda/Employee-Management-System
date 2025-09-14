@@ -1,4 +1,42 @@
-<?php require_once('session.php');  ?>
+<?php require_once('session.php');  
+require_once('connection.php');
+
+$user_email = $_SESSION['email'];
+
+$emp_query = "SELECT * FROM employees WHERE email = '$user_email' LIMIT 1";
+$emp_res = mysqli_query($con, $emp_query);
+$emp_data = mysqli_fetch_assoc($emp_res);
+
+if (isset($_POST['submit'])) {
+    $eid = $_POST['eid'];
+    $nid = $_POST['nid'];
+    $nm = $_POST['nm'];
+    $email = $_POST['em'];
+    $dep = $_POST['dep'];
+    $number = $_POST['pn'];
+    $des = $_POST['des'];
+    $sd = $_POST['sd'];
+    $ed = $_POST['ed'];
+    $address = $_POST['add'];
+    $via = $_POST['modeOfTravel'];
+    $cost = $_POST['cs'];
+
+    // default status value (e.g., Pending)
+    $status = "Pending";
+
+    $q = "INSERT INTO tours 
+        (emp_id, nid, emp_name, email, department, contact, start_date, end_date, description, address, mode_of_travel, total_cost, Status) 
+        VALUES 
+        ('$eid', '$nid', '$nm', '$email', '$dep', '$number', '$sd', '$ed', '$des', '$address', '$via', '$cost', '$status')";
+
+    if (mysqli_query($con, $q)) {
+        echo "<script>alert('Submitted successfully!');</script>";
+        echo "<script>window.location.href = 'http://localhost/Employee%20Management%20System/user_panel/tours.php';</script>";
+    } else {
+        echo "Error: " . mysqli_error($con);
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,8 +73,6 @@
 <body id="page-top">
 
     <?php require_once('sidebar.php'); ?>
-
-
     <?php require_once('topbar.php'); ?>
 
     <div class="container-fluid">
@@ -50,38 +86,37 @@
                         <div class="card-body">
                             <h2 class="title">Tour Request</h2>
 
-                            <input type="hidden" name="id">
+                            <!-- hidden employee id -->
+                            <input type="hidden" name="eid" value="<?php echo $emp_data['id']; ?>">
 
                             <LABEL>NID</LABEL>
                             <div class="input-group1">
-                                <input class="input--style-1" type="text" placeholder="NID" name="nid" readonly />
-                                <span id="nid_err" class="error1 p-1"></span>
+                                <input class="input--style-1" type="text" placeholder="NID" name="nid"
+                                    value="<?php echo $emp_data['nid']; ?>" readonly />
                             </div>
 
                             <LABEL>Employee Name</LABEL>
                             <div class="input-group1">
                                 <input class="input--style-1" type="text" placeholder="Employee Name" name="nm"
-                                    readonly />
-                                <span id="nm_err" class="error1 p-1"></span>
+                                    value="<?php echo $emp_data['full_name']; ?>" readonly />
                             </div>
 
                             <LABEL>Email</LABEL>
                             <div class="input-group1">
-                                <input class="input--style-1" type="text" placeholder="Email" name="em" readonly />
-                                <span id="em_err" class="error1 p-1"></span>
+                                <input class="input--style-1" type="text" placeholder="Email" name="em"
+                                    value="<?php echo $emp_data['email']; ?>" readonly />
                             </div>
 
                             <LABEL>Department</LABEL>
                             <div class="input-group1">
                                 <input class="input--style-1" type="text" placeholder="Department" name="dep"
-                                    readonly />
-                                <span id="dep_err" class="error1 p-1"></span>
+                                    value="<?php echo $emp_data['department']; ?>" readonly />
                             </div>
 
                             <LABEL>Contact</LABEL>
                             <div class="input-group1">
-                                <input class="input--style-1" type="number" placeholder="Contact" name="pn" readonly />
-                                <span id="pn_err" class="error1 p-1"></span>
+                                <input class="input--style-1" type="number" placeholder="Contact" name="pn"
+                                    value="<?php echo $emp_data['contact']; ?>" readonly />
                             </div>
 
                             <div>
@@ -101,14 +136,11 @@
                             </div>
 
                             <LABEL>Description</LABEL>
-
                             <div class="input-group1">
                                 <textarea class="input--style-1" type="text" placeholder="Description"
                                     name="des"></textarea>
                                 <span id="des_err" class="error1 p-1"></span>
                             </div>
-
-
 
                             <label for="modeOfTravel">Mode of Travel:</label>
                             <select id="modeOfTravel" class="input--style-1" name="modeOfTravel" required>
@@ -116,58 +148,37 @@
                                 <option value="train">Train</option>
                                 <option value="bus">Bus</option>
                                 <option value="car">Car</option>
-
                             </select><br><br>
 
                             <LABEL>Address</LABEL>
-
                             <div class="input-group1">
                                 <input class="input--style-1" type="text" placeholder="Address" name="add"></input>
                                 <span id="add_err" class="error1 p-1"></span>
                             </div>
 
                             <LABEL>Total Cost</LABEL>
-
                             <div class="input-group1">
                                 <input class="input--style-1" type="number" placeholder="Total Estimated cost"
                                     name="cs"></input>
                                 <span id="cs_err" class="error1 p-1"></span>
                             </div>
 
-
                             <div class="p-t-20">
-                                <button class="btn btn--radius btn-success" type="submit">Submit</button>
+                                <button class="btn btn--radius btn-success" type="submit" name="submit">Submit</button>
                             </div>
 
                         </div>
                     </div>
                 </div>
-
         </form>
 
     </div>
-    </div>
 
-    </div>
-
-
-
-
-    <?php
-    require_once('footer.php');
-    ?>
-
-    </div>
-
-
-    </div>
-
-
+    <?php require_once('footer.php'); ?>
 
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
 
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -190,15 +201,12 @@
     </div>
 
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
     <script src="js/sb-admin-2.min.js"></script>
-
     <script src="vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
     <script src="js/demo/datatables-demo.js"></script>
+
     <script>
     window.history.pushState(null, "", window.location.href);
     window.onpopstate = function() {
@@ -209,32 +217,3 @@
 </body>
 
 </html>
-<?php
-require_once('connection.php');
-if (isset($_POST['submit'])) {
-    // echo "hi";
-    $eid = $_POST['eid'];
-    $nid = $_POST['nid'];
-    $nm = $_POST['nm'];
-    $email = $_POST['em'];
-    $dep = $_POST['dep'];
-    $number = $_POST['pn'];
-    $des = $_POST['des'];
-    $sd = $_POST['sd'];
-    $ed = $_POST['ed'];
-    $address = $_POST['add'];
-    $via = $_POST['modeOfTravel'];
-    $cost = $_POST['cs'];
-    $q = "INSERT INTO tours VALUES ('',$eid,'$nid','$nm','$email','$dep',$number,'$sd','$ed','$des','$address','$via',$cost)";
-    // echo $q1;
-    if (mysqli_query($con, $q)) {
-        echo "<script>
-    alert('Submitted successfully!');
-</script>";
-        echo "<script>
-    window.location.href = 'http://localhost/Employee%20Management%20System/user_panel/tours.php';
-</script>";
-    } else {
-        echo "Error: " . mysqli_error($con);
-    }
-}

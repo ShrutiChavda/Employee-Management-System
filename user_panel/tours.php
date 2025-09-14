@@ -56,8 +56,8 @@
                         </thead>
                         <tbody>
                             <?php
-                            $id=$_SESSION['user_id'];
-                            $q = "SELECT * FROM tours where id=$id";
+                            $id = $_SESSION['user_id'];
+                            $q = "SELECT * FROM tours WHERE emp_id = $id";
                             $result = mysqli_query($con, $q);
                             $count = mysqli_num_rows($result);
                             while ($a = mysqli_fetch_array($result)) {

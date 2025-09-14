@@ -1,22 +1,32 @@
 <?php  require_once('session.php'); 
-if(isset($_GET['id'])) {
-    $a = $_GET['id'];
-    if(empty($a)) {
-        echo "<script>alert('You haven't applied for any events');</script>";
-        echo "<script>window.location.href='http://localhost/Employee%20Management%20System/user_panel/event.php';</script>";
+
+if (isset($_GET['id'])) {
+    $event_id = $_GET['id'];
+    $employee_name = $_SESSION['full_name']; // Assuming full name is stored in session
+
+    if (empty($event_id)) {
+        echo "<script>alert('Invalid event ID');</script>";
+        echo "<script>window.location.href='event.php';</script>";
+        exit();
+    }
+
+    // Corrected query
+    $res = mysqli_query($con, "SELECT ep.*, e.* 
+        FROM event_pt ep 
+        INNER JOIN events e ON ep.event_id = e.id 
+        WHERE ep.event_id = '$event_id' AND ep.employee_name = '$employee_name'");
+
+    if (mysqli_num_rows($res) > 0) {
+        $rec = mysqli_fetch_array($res);
+        // Employee has participated; proceed to show details
     } else {
-        $res = mysqli_query($con, "SELECT * FROM event_pt 
-        INNER JOIN events ON event_pt.id = events.id 
-        WHERE event_pt.id = '$a'");
-        if(mysqli_num_rows($res) > 0) {
-            $rec = mysqli_fetch_array($res);
-            // Proceed with processing the event data
-        } else {
-            echo "<script>alert('Event not found');</script>";
-            echo "<script>window.location.href='http://localhost/Employee%20Management%20System/user_panel/event.php';</script>";
-        }
+        // Employee has NOT participated
+        echo "<script>alert('You have not participated in this event');</script>";
+        echo "<script>window.location.href='event.php';</script>";
+        exit();
     }
 }
+
 ?>
 
 
@@ -111,8 +121,8 @@ th {
                             </tr>
 
                             <td>Email</td>
-                            <td><?php //echo $_SESSION['email']; ?></td>
-                            </tr> -->
+                            <td><?php echo $_SESSION['email']; ?></td>
+                            </tr> 
                             <tr>
                                 <td>Event Date</td>
                                 <td><?php echo $rec['event_date']; ?></td>

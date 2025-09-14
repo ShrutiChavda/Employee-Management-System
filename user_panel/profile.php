@@ -213,7 +213,7 @@ $q = "select * from employees where id='$id'";
 $res = mysqli_query($con, $q);
 while ($row = mysqli_fetch_array($res)) { ?>
                             <img class="img-profile rounded-circle" height="100px" width="100px"
-                                src="Uploads/<?php echo $row['14']; ?>" /><?php  }}  ?>
+                                src="../Uploads/<?php echo $row['14']; ?>" /><?php  }}  ?>
 
                             <div class="input-group1">
                                 <input class="input--style-1" type="file" placeholder="Upload Image" name="f1"
@@ -222,7 +222,7 @@ while ($row = mysqli_fetch_array($res)) { ?>
                             <?php
 
 
-$dir = "Uploads";
+$dir = __DIR__ . "/../Uploads"; // absolute server path
 
 if (isset($_POST['submit'])) {
 $file_uploaded = false;

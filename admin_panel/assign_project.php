@@ -135,15 +135,7 @@ if(isset($_POST['submit'])) {
                             </div>
 
                             <div id="a1">
-                                <div>
-                                    <label>Starting time</label>
-                                </div>
-                                <div>
-                                    <input id="st" class="input--style-1" type="time" placeholder="Starting Time"
-                                        name="st" />
-                                    <span id="st_err" class="error1 p-1"></span>
-                                </div>
-
+                            
                                 <div>
                                     <label>End time</label>
                                 </div>

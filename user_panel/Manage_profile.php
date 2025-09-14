@@ -60,7 +60,7 @@
 
                             <div>
                                 <img class="img-profile rounded-circle" height="100px" width="100px"
-                                    src="Uploads/<?php echo $row['14']; ?>" />
+                                    src="../Uploads/<?php echo $row['14']; ?>" />
 
                             </div><br>
 

@@ -58,29 +58,25 @@
                         <tbody>
                             <tr>
                                 <?php
-              $q = "SELECT e.*, s.base_salary FROM employees e LEFT JOIN salary s ON e.id = s.emp_id";
-              $res = mysqli_query($con, $q);
+                                
+                $q = "SELECT e.*, s.base_salary, s.bonus, s.total_salary 
+                  FROM employees e 
+                  LEFT JOIN salary s ON e.id = s.emp_id";              $res = mysqli_query($con, $q);
               while ($row = mysqli_fetch_array($res)) { ?>
                                 <td><?php echo $row[0];  ?></td>
                                 <td><?php echo $row[2];  ?></td>
 
-                                <td><img src="img/Uploads/<?php
-                                if($row[14]=="profile.jpg"){
-                                    echo "1";
-                                }
-                                else
-                                {
-                                    echo "2";
-                                }
-                                ?>.jpg" height=60px width=60px></td>
+                                <td>
+                                    <img src="../Uploads/<?php echo $row['profile_pic']; ?>" height="60" width="60"
+                                        style="object-fit:cover; border-radius:50%;">
+                                </td>
+
                                 <td><?php echo $row[4];  ?></td>
                                 <td><?php echo $row[6];  ?></td>
                                 <td><?php echo $row[10];  ?></td>
                                 <td><?php echo $row[12];  ?></td>
-                                <td> <?php
-              $q1 = "select * from salary";
-              $re = mysqli_query($con, $q1);
-              if($r = mysqli_fetch_array($re)) { echo $r['2']; }?></td>
+                                <td><?php echo $row['total_salary'];  ?></td>
+
                                 <td>
                                     <a href="edit_emp.php?edit=<?php echo $row[0]; ?>"
                                         class="btn btn-success btn-circle btn-sm">
@@ -88,11 +84,39 @@
                                     </a>
                                 </td>
                                 </td>
-                                <td>
-                                    <a href="edit_emp.php?del=<?php echo $row[0]; ?>" class="btn btn-danger btn-circle btn-sm">
-                                        <i class="fas fa-trash"></i>
-                                    </a>
+                                <?php 
+                               if (isset($_GET['del']) && isset($_GET['full_name']) && isset($_GET['user_name'])) {
+    $emp_id = $_GET['del'];
+    $emp_name = $_GET['full_name'];
+    $user_name = $_GET['user_name'];
+
+    // Delete from event_pt where employee_name matches full_name
+    mysqli_query($con, "DELETE FROM event_pt WHERE employee_name='$emp_name'");
+
+    // Delete from leaves, projects, tours, salary
+    mysqli_query($con, "DELETE FROM leaves WHERE emp_id='$emp_id'");
+    mysqli_query($con, "DELETE FROM projects WHERE leader_id='$emp_id'");
+    mysqli_query($con, "DELETE FROM tours WHERE emp_id='$emp_id'");
+    mysqli_query($con, "DELETE FROM salary WHERE emp_id='$emp_id'");
+
+    // Delete from emp_login where user_name matches
+    mysqli_query($con, "DELETE FROM emp_login WHERE user_name='$user_name'");
+
+    // Delete employee
+    mysqli_query($con, "DELETE FROM employees WHERE id='$emp_id'");
+
+    echo "<script>alert('Employee Deleted!');</script>";
+    echo "<script>window.location.href='view_emp.php';</script>";
+}
+
+?>
+                               <td>
+                                <a href="view_emp.php?del=<?php echo $row['id']; ?>&full_name=<?php echo urlencode($row['full_name']); ?>&user_name=<?php echo urlencode($row['user_name']); ?>" 
+                                   class="btn btn-danger btn-circle btn-sm">
+                                    <i class="fas fa-trash"></i>
+                                </a>
                                 </td>
+
                             </tr>
                             <?php  }  ?>
                         </tbody>
