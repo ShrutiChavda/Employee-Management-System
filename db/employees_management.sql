@@ -36,7 +36,7 @@ CREATE TABLE `admin` (
   `pic` varchar(50) DEFAULT 'undraw_profile.jpg',
   `role` varchar(50) DEFAULT 'admin',
   `password` varchar(255) NOT NULL,
-  `status` varchar(50) DEFAULT 'Inactive'
+  `status` varchar(50) DEFAULT 'inactive'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -495,7 +495,7 @@ CREATE TABLE `projects` (
   `sub_date` date NOT NULL,
   `file_name` varchar(255) NOT NULL,
   `points` int(11) NOT NULL,
-  `status` varchar(20) NOT NULL DEFAULT 'Inactive'
+  `status` varchar(20) NOT NULL DEFAULT 'inactive'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

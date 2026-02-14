@@ -74,7 +74,7 @@ $con=mysqli_connect("localhost","root","","employees_management");
 //     due_date DATE NOT NULL,
 //     sub_date DATE NOT NULL,
 //     points INT(11) NOT NULL,
-//     status VARCHAR(20) NOT NULL DEFAULT 'Inactive',
+//     status VARCHAR(20) NOT NULL DEFAULT 'inactive',
 //     PRIMARY KEY (p_id)
 // )";
 
@@ -122,7 +122,7 @@ $con=mysqli_connect("localhost","root","","employees_management");
 // FOR EACH ROW
 // BEGIN
 //     INSERT INTO emp_login (user_name, password, status)
-//     VALUES (NEW.user_name, NEW.password, 'Inactive');
+//     VALUES (NEW.user_name, NEW.password, 'inactive');
 // END;
 // //
 // DELIMITER ;";

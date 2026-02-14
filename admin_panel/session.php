@@ -3,7 +3,7 @@ session_start();
 include('connection.php');
 //If the user closes the browser's window then session will get destroyed
 if (!isset($_SESSION['username'])) {
-    $sql_update_status = "UPDATE admin SET status = 'Inactive'";
+    $sql_update_status = "UPDATE admin SET status = 'inactive'";
     mysqli_query($con, $sql_update_status);
     header("Location: http://localhost/Employee%20Management%20System/login.php");
     exit();
@@ -38,7 +38,7 @@ if (isset($_SESSION['timeout']) && $_SESSION['timeout'] < time()) {
     session_destroy();
     echo "<script>alert('Session Expired!');</script>";
     echo "<script>window.location.replace('http://localhost/Employee%20Management%20System/login.php');</script>"; 
-    $sql_update_status = "UPDATE admin SET status = 'Inactive'";
+    $sql_update_status = "UPDATE admin SET status = 'inactive'";
     mysqli_query($con, $sql_update_status);
     exit();
 }

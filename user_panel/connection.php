@@ -121,7 +121,7 @@ $con=mysqli_connect("localhost","root","","employees_management");
 // FOR EACH ROW
 // BEGIN
 //     INSERT INTO emp_login (user_name, password, status)
-//     VALUES (NEW.user_name, NEW.password, 'Inactive');
+//     VALUES (NEW.user_name, NEW.password, 'inactive');
 // END;
 // //
 // DELIMITER ;";

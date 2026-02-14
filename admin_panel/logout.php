@@ -8,7 +8,7 @@ include('connection.php');
 if (isset($_SESSION['username'])) {
     // Update user status to "inactive" in the database
     $username = $_SESSION['username'];
-    $sql_update_status = "UPDATE admin SET status = 'Inactive' WHERE user_name = '$username'";
+    $sql_update_status = "UPDATE admin SET status = 'inactive' WHERE user_name = '$username'";
     mysqli_query($con, $sql_update_status);
     unset($_SESSION['username']);
 }
